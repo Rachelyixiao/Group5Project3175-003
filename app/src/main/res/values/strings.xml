@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Group5Project3175-003</string>
+    <string name="txtTitleBigExpense">BIG EXPENSE PLAN</string>
+    <string name="txtInputBigExpense">Input your estimated cost</string>
+    <string name="btnBigExpenseSubmit">SUBMIT</string>
+    <string name="homepage">homepage</string>
+    <string name="report">report</string>
+    <string name="account">account</string>
+    <string name="settings">settings</string>
+    <string name="imgBigExpense">imgBigExpense</string>
+    <string name="btnTest">test</string>
 </resources>
