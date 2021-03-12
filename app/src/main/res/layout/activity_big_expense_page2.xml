@@ -23,10 +23,60 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="179dp"
-        tools:layout_editor_absoluteY="90dp" />
+        android:id="@+id/txtBigExpenseO1"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="173dp"
+        android:layout_marginLeft="173dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="238dp"
+        android:layout_marginRight="238dp"
+        android:background="#E3DFDF"
+        android:textColor="#3386DF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtOption1"
+        android:layout_width="111dp"
+        android:layout_height="299dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="168dp"
+        android:background="#031795"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBigExpenseTitle2" />
+
+    <TextView
+        android:id="@+id/txtOption2"
+        android:layout_width="106dp"
+        android:layout_height="292dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:background="#031795"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/txtOption3"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/txtOption1"
+        app:layout_constraintTop_toBottomOf="@+id/txtBigExpenseTitle2" />
+
+    <TextView
+        android:id="@+id/txtOption3"
+        android:layout_width="104dp"
+        android:layout_height="292dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#031795"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBigExpenseTitle2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
