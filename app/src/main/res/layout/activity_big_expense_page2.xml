@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtBigExpenseO1"
+        android:id="@+id/txtBigExpenseO2"
         android:layout_width="0dp"
         android:layout_height="41dp"
         android:layout_marginStart="173dp"
@@ -40,8 +40,8 @@
 
     <TextView
         android:id="@+id/txtOption1"
-        android:layout_width="111dp"
-        android:layout_height="299dp"
+        android:layout_width="110dp"
+        android:layout_height="300dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="168dp"
@@ -53,8 +53,8 @@
 
     <TextView
         android:id="@+id/txtOption2"
-        android:layout_width="106dp"
-        android:layout_height="292dp"
+        android:layout_width="110dp"
+        android:layout_height="300dp"
         android:layout_marginStart="19dp"
         android:layout_marginLeft="19dp"
         android:layout_marginTop="168dp"
@@ -69,9 +69,9 @@
 
     <TextView
         android:id="@+id/txtOption3"
-        android:layout_width="104dp"
-        android:layout_height="292dp"
-        android:layout_marginTop="172dp"
+        android:layout_width="110dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:background="#031795"
