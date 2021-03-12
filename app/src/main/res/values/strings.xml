@@ -9,4 +9,11 @@
     <string name="settings">settings</string>
     <string name="imgBigExpense">imgBigExpense</string>
     <string name="btnTest">test</string>
+    <string name="txtTitleSettings">SETTINGS</string>
+    <string name="txtChangeSetting">SET/CHANGE PROFILES</string>
+    <string name="txtSettingChangeName">Input your name</string>
+    <string name="txtSettingChangeEmail">Input your email address</string>
+    <string name="txtSettingChangePhone">Input your phone number</string>
+    <string name="txtSettingChangePassword">Input your password</string>
+    <string name="btnSettingChange">SUBMIT</string>
 </resources>
