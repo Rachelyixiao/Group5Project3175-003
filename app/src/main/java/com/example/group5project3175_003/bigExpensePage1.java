@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 public class bigExpensePage1 extends AppCompatActivity {
     double bigCost;
@@ -30,6 +31,23 @@ public class bigExpensePage1 extends AppCompatActivity {
                 //if bigcost > personal account amount
                // Intent i2 = new Intent(BigExpensePage1.this,BigExpensePage3.class);
                // startActivity(i2);
+            }
+        });
+
+        ImageButton btnHome = findViewById(R.id.imgbtnHome);
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(bigExpensePage1.this,MainActivity.class));
+            }
+        });
+
+        ImageButton btnSettings = findViewById(R.id.imgbtnSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(bigExpensePage1.this,SettingPage1.class));
             }
         });
 

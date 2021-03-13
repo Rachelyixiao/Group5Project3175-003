@@ -14,12 +14,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnTest = findViewById(R.id.btnTest);
+        Button btnBig = findViewById(R.id.btnBig);
+        Button btnSetting = findViewById(R.id.btnSettings);
 
-        btnTest.setOnClickListener(new View.OnClickListener() {
+        btnBig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, bigExpensePage1.class));
+            }
+        });
+
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SettingPage1.class));
             }
         });
     }
