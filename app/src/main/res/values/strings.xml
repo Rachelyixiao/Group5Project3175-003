@@ -21,6 +21,49 @@
     <string name="imgbtnaccount">account</string>
     <string name="imgbtnsettings">settings</string>
     <string name="imgbtnreport">report</string>
-
+    <string name="NewUser1Text1">STEP 1/3</string>
+    <string name="NewUser1Title">Create your account</string>
+    <string name="NewUser1Text2">Your name and password will be used for login</string>
+    <string name="NewUser1Text3">FIRST NAME</string>
+    <string name="NewUser1Text4">LAST NAME</string>
+    <string name="NewUser1Text5">EMAIL ADDRESS</string>
+    <string name="NewUser1Text6">PASSWORD</string>
+    <string name="NewUser1Text7">PASSWORD</string>
+    <string name="NewUser1Hint1">8character is minimum</string>
+    <string name="NewUser1Hint2">Re-enter your password</string>
+    <string name="NewUser2Text1">STEP 2/3</string>
+    <string name="NewUser2Title1">Make the basic settings</string>
+    <string name="NewUser2Text2">CURRENCY</string>
+    <string name="NewUser2Text3">LANGUAGE</string>
+    <string name="NewUser2Text4">ALARM</string>
+    <string name="NewUser2Text5">THEME</string>
+    <string name="NewUser2R1">Pop up alarm</string>
+    <string name="NewUser2R2">Dark mode</string>
+    <string name="NewUserBtn1">CONTINUE</string>
+    <string name="NewUser3Text1">STEP 3/3</string>
+    <string name="NewUser3Title">Set your account</string>
+    <string name="NewUser3Text2">You can continue customizing it later</string>
+    <string name="NewUser3Text3">ACCOUNT NAME</string>
+    <string name="NewUser3Text4">BUDGET TYPE</string>
+    <string name="NewUser3Hint1">My saving account</string>
+    <string name="NewUserBtn2">WELCOME</string>
+    <string-array name="Currency">
+        <item>Canadian dollar(CAD)</item>
+        <item>U.S. dollar(USD)</item>
+        <item>Chinese yuan(RMB)</item>
+        <item>Korean Won(KRW)</item>
+    </string-array>
+    <string-array name="Language">
+        <item>English</item>
+        <item>French</item>
+        <item>Chinese</item>
+        <item>Korean</item>
+    </string-array>
+    <string-array name="BudgetType">
+        <item>Monthly Budget</item>
+        <item>Daily Budget</item>
+        <item>Weekly Budget</item>
+        <item>Yearly Budget</item>
+    </string-array>
 
 </resources>

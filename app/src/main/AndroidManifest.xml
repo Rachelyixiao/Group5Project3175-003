@@ -11,6 +11,9 @@
         android:theme="@style/Theme.Group5Project3175003">
         <activity android:name=".SettingPage2"></activity>
         <activity android:name=".SettingPage1" />
+        <activity android:name=".NewUser3"/>
+        <activity android:name=".NewUser2" />
+        <activity android:name=".NewUser1"/>
         <activity android:name=".bigExpensePage3" />
         <activity android:name=".bigExpensePage2" />
         <activity android:name=".bigExpensePage1" />

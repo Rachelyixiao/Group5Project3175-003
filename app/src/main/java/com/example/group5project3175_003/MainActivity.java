@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnBig = findViewById(R.id.btnBig);
         Button btnSetting = findViewById(R.id.btnSettings);
+        Button btnNweUser = findViewById(R.id.btnNewUser);
 
         btnBig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SettingPage1.class));
+            }
+        });
+        btnNweUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NewUser1.class));
             }
         });
     }
