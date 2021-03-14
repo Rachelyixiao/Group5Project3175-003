@@ -7,7 +7,7 @@
     tools:context=".NewUser3">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn3"
         android:layout_width="142dp"
         android:layout_height="46dp"
         android:layout_marginBottom="56dp"
@@ -17,21 +17,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner4"
+        app:layout_constraintTop_toBottomOf="@+id/budgettype"
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/budgettype"
         android:layout_width="347dp"
         android:layout_height="58dp"
         android:layout_marginTop="44dp"
         android:entries="@array/BudgetType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText4" />
+        app:layout_constraintTop_toBottomOf="@+id/acName" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText4"
+        android:id="@+id/acName"
         android:layout_width="347dp"
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
@@ -105,6 +105,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText4" />
+        app:layout_constraintTop_toBottomOf="@+id/acName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

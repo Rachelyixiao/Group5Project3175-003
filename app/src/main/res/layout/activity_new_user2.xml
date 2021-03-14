@@ -7,7 +7,7 @@
     tools:context=".NewUser2">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn2"
         android:layout_width="142dp"
         android:layout_height="46dp"
         android:layout_marginBottom="44dp"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/currency"
         android:layout_width="347dp"
         android:layout_height="58dp"
         android:layout_marginTop="80dp"
@@ -72,14 +72,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/language"
         android:layout_width="347dp"
         android:layout_height="58dp"
         android:layout_marginTop="40dp"
         android:entries="@array/Language"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/currency" />
 
     <TextView
         android:id="@+id/textView21"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/currency" />
 
     <TextView
         android:id="@+id/textView22"
@@ -101,31 +101,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+        app:layout_constraintTop_toBottomOf="@+id/language" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/alarm"
         android:layout_width="347dp"
         android:layout_height="58dp"
         android:layout_marginTop="40dp"
+        android:checked="true"
+        android:includeFontPadding="false"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="@string/NewUser2R1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+        app:layout_constraintTop_toBottomOf="@+id/language"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/theme"
         android:layout_width="347dp"
         android:layout_height="58dp"
         android:layout_marginTop="40dp"
+        android:checked="true"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="@string/NewUser2R2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/alarm"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/textView23"
@@ -136,6 +141,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/alarm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

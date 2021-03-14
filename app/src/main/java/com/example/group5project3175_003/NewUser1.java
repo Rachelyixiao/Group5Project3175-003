@@ -11,14 +11,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NewUser1 extends AppCompatActivity {
-    UserDatabase userDatabase;
+
     String sFName,sLName,sEmail,sPsw1,sPsw2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_user1);
 
-        userDatabase = new UserDatabase(this);
+
         EditText fName = findViewById(R.id.fn);
         EditText lName = findViewById(R.id.ln);
         EditText email = findViewById(R.id.email);
@@ -26,10 +26,10 @@ public class NewUser1 extends AppCompatActivity {
         EditText psw2 = findViewById(R.id.psw2);
         Button button = findViewById(R.id.btn1);
 
-        SharedPreferences user = getSharedPreferences("User",MODE_PRIVATE);
+        SharedPreferences user = getSharedPreferences("user",MODE_PRIVATE);
 
         button.setOnClickListener(new View.OnClickListener() {
-            boolean isInserted;
+
             @Override
             public void onClick(View v) {
                 sFName = fName.getText().toString();
@@ -60,10 +60,10 @@ public class NewUser1 extends AppCompatActivity {
                         editor.putString("lName", sLName);
                         editor.putString("email", sEmail);
                         editor.putString("psw", sPsw1);
-
+                        editor.putString("alarm","On");
+                        editor.putString("theme","On");
                         editor.commit();
                         startActivity(new Intent(NewUser1.this, NewUser2.class));
-                        Toast.makeText(NewUser1.this, "111", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if (isUnfill){
