@@ -51,6 +51,8 @@
     <string name="CustomerSDate">Enter Start Date</string>
     <string name="CustomerEDate">Enter Ending Date</string>
     <string name="CustomerBtnSubmit">Submit</string>
+    <string name="imglistviewlayout">an image</string>
+    <string name="btnNewUser">New User</string>
     <string-array name="Currency">
         <item>Canadian dollar(CAD)</item>
         <item>U.S. dollar(USD)</item>
@@ -69,5 +71,6 @@
         <item>Weekly Budget</item>
         <item>Yearly Budget</item>
     </string-array>
+    <string name="imgFirstPage">img test</string>
 
 </resources>

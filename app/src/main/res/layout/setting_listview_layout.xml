@@ -4,10 +4,10 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         android:id="@+id/settingImage"
-        android:contentDescription="an image"/>
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/imglistviewlayout" />
 
     <TextView
         android:layout_width="wrap_content"

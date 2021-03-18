@@ -36,9 +36,9 @@
         <ListView
             android:id="@+id/SettinglistView"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
+            android:layout_height="300dp"
             android:layout_marginTop="60sp"
-            android:background="#00ACC1"></ListView>
+            android:background="#EAEDED"></ListView>
     </LinearLayout>
 
     <ImageButton
