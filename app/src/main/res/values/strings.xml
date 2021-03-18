@@ -24,7 +24,7 @@
     <string name="NewUser1Text1">STEP 1/3</string>
     <string name="NewUser1Title">Create your account</string>
     <string name="NewUser1Text2">Your name and password will be used for login</string>
-    <string name="NewUser1Text3">FIRST NAME</string>
+    <string name="NewUser1Text3" translatable="false">FIRST NAME</string>
     <string name="NewUser1Text4">LAST NAME</string>
     <string name="NewUser1Text5">EMAIL ADDRESS</string>
     <string name="NewUser1Text6">PASSWORD</string>
@@ -72,5 +72,33 @@
         <item>Yearly Budget</item>
     </string-array>
     <string name="imgFirstPage">img test</string>
+    <string name="covertitle">covertitle</string>
+    <string name="coversubtitle">coversubtitle</string>
+    <string name="guestregibar1">guestregibar1</string>
+    <string name="guestregibar2">guestregibar2</string>
+    <string name="guestregititle1">guestregititle1</string>
+    <string name="guestregititle2">guestregititle2</string>
+    <string name="btnwelcome">btnwelcome</string>
+    <string name="btncontinue">btncontinue</string>
+    <string name="regibar1">regibar1</string>
+    <string name="regibar2">regibar2</string>
+    <string name="regibar3">regibar3</string>
+    <string name="regititle1">regititle1</string>
+    <string name="regititle2">regititle2</string>
+    <string name="regititle3">regititle3</string>
+    <string name="btnTracker">btnTracker</string>
+    <string name="btnBig">btnBig</string>
+    <string name="btnReport">btnReport</string>
+    <string name="btnSetting">btnSetting</string>
+    <string name="btnAdd">btnAdd</string>
+    <string name="signuptitleimg">signuptitleimg</string>
+    <string name="btnsignup1">btnsignup1</string>
+    <string name="btnsignup2">btnsignup2</string>
+    <string name="bigexpensetitle1">bigexpensetitle1</string>
+    <string name="bigexpensetitle2">bigexpensetitle2</string>
+    <string name="btnSubmit">btnSubmit</string>
+    <string name="comment_big">Input your estimated cost</string>
+    <string name="settingTitle">settingTitle</string>
+    <string name="reportTitle">reportTitle</string>
 
 </resources>

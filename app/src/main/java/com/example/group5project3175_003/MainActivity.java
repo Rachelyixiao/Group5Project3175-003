@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,9 +15,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnBig = findViewById(R.id.btnBig);
-        Button btnSetting = findViewById(R.id.btnSettings);
-        Button btnNweUser = findViewById(R.id.btnNewUser);
+        ImageView btnTracker = findViewById(R.id.btnTracker);
+        ImageView btnBig = findViewById(R.id.btnBig);
+        ImageView btnReport = findViewById(R.id.btnReport);
+        ImageView btnSettings = findViewById(R.id.btnSettings);
+        ImageView btnAdd = findViewById(R.id.btnAdd);
+
+        btnTracker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
 
         btnBig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,17 +35,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnSetting.setOnClickListener(new View.OnClickListener() {
+        btnReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, reportMain.class));
+            }
+        });
+
+        btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SettingPage1.class));
             }
         });
-        btnNweUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NewUser1.class));
-            }
-        });
+
+//        btnAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, MainActivity.class));
+//            }
+//        });
+
     }
 }
