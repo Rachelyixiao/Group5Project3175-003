@@ -4,127 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/subbg"
+    android:scrollbarSize="12dp"
     tools:context=".bigExpensePage1">
 
-    <TextView
-        android:id="@+id/txtSettingTitle"
+    <ImageView
+        android:id="@+id/bigexpensetitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:fontFamily="@font/abril_fatface"
-        android:text="@string/txtTitleBigExpense"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/bigexpensetitle1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bigtitle1" />
 
     <ImageView
-        android:id="@+id/imgBigExpense"
-        android:layout_width="247dp"
-        android:layout_height="354dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginLeft="82dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginRight="82dp"
-        android:contentDescription="@string/imgBigExpense"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBigCostInput"
-        app:srcCompat="@drawable/savemoney1" />
-
-    <Button
-        android:id="@+id/btnBigExpenseSubmit"
+        android:id="@+id/btnTracker_big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginLeft="139dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginRight="139dp"
-        android:text="@string/btnBigExpenseSubmit"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/btnTracker"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBigExpense" />
+        app:srcCompat="@drawable/btntracker" />
+
+    <ImageView
+        android:id="@+id/btnBig_big"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnBig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_big"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_big"
+        app:srcCompat="@drawable/btnbig" />
+
+    <ImageView
+        android:id="@+id/btnReport_big"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnReport"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetting_big"
+        app:layout_constraintStart_toEndOf="@+id/btnBig_big"
+        app:srcCompat="@drawable/btnreport" />
+
+    <ImageView
+        android:id="@+id/btnSetting_big"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:contentDescription="@string/btnSetting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_big"
+        app:srcCompat="@drawable/btnsetting" />
 
     <EditText
-        android:id="@+id/txtBigCostInput"
+        android:id="@+id/txtGetInput_big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginLeft="66dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginRight="67dp"
+        android:layout_marginTop="100dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="@string/txtInputBigExpense"
-        android:inputType="numberDecimal"
-        android:textColor="#3949AB"
+        android:hint="@string/comment_big"
+        android:inputType="number|numberDecimal"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSettingTitle"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/bigexpensetitle1" />
 
-
-    <ImageButton
-        android:id="@+id/imgbtnHome"
+    <ImageView
+        android:id="@+id/btnSubmit_big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:contentDescription="@string/imgbtnhome"
-        android:src="@drawable/homeicon1"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtnReport"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBigExpense" />
-
-    <ImageButton
-        android:id="@+id/imgbtnReport"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:contentDescription="@string/imgbtnreport"
-        android:src="@drawable/reporticon1"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtnAccount"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnHome"
-        app:layout_constraintTop_toBottomOf="@+id/btnBigExpenseSubmit" />
-
-    <ImageButton
-
-        android:id="@+id/imgbtnAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:contentDescription="@string/imgbtnaccount"
-        android:src="@drawable/accounticon1"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtnSettings"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnReport"
-        app:layout_constraintTop_toBottomOf="@+id/btnBigExpenseSubmit" />
-
-    <ImageButton
-
-        android:id="@+id/imgbtnSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:contentDescription="@string/imgbtnsettings"
-        android:src="@drawable/settingicon2"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="@string/btnSubmit"
+        app:layout_constraintBottom_toTopOf="@+id/btnReport_big"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnAccount"
-        app:layout_constraintTop_toBottomOf="@+id/imgBigExpense" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btnsubmit" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

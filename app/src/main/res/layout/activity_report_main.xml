@@ -5,45 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/subbg"
-    tools:context=".bigExpensePage2">
+    tools:context=".reportMain">
 
     <ImageView
-        android:id="@+id/bigexpensetitle2"
+        android:id="@+id/reportTitle_rpt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:contentDescription="@string/bigexpensetitle2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="110dp"
+        android:contentDescription="@string/reportTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bigtitle1" />
-
-    <HorizontalScrollView
-        android:layout_width="408dp"
-        android:layout_height="303dp"
-        android:layout_marginTop="230dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" />
-    </HorizontalScrollView>
+        app:srcCompat="@drawable/reporttitle" />
 
     <ImageView
-        android:id="@+id/btnTracker_big2"
+        android:id="@+id/btnTracker_rpt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
         android:contentDescription="@string/btnTracker"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnbig_rpt1"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btntracker" />
 
     <ImageView
-        android:id="@+id/btnBig_big2"
+        android:id="@+id/btnbig_rpt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -52,12 +41,12 @@
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnBig"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnReport_big2"
-        app:layout_constraintStart_toEndOf="@+id/btnTracker_big2"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_rpt1"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_rpt1"
         app:srcCompat="@drawable/btnbig" />
 
     <ImageView
-        android:id="@+id/btnReport_big2"
+        android:id="@+id/btnReport_rpt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -66,12 +55,12 @@
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnReport"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSetting_big2"
-        app:layout_constraintStart_toEndOf="@+id/btnBig_big2"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetting_rpt1"
+        app:layout_constraintStart_toEndOf="@+id/btnbig_rpt1"
         app:srcCompat="@drawable/btnreport" />
 
     <ImageView
-        android:id="@+id/btnSetting_big2"
+        android:id="@+id/btnSetting_rpt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -79,7 +68,6 @@
         android:contentDescription="@string/btnSetting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnReport_big2"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_rpt1"
         app:srcCompat="@drawable/btnsetting" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
