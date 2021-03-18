@@ -47,6 +47,10 @@
     <string name="NewUser3Text4">BUDGET TYPE</string>
     <string name="NewUser3Hint1">My saving account</string>
     <string name="NewUserBtn2">WELCOME</string>
+    <string name="CustomerReportTitle">Customize Report</string>
+    <string name="CustomerSDate">Enter Start Date</string>
+    <string name="CustomerEDate">Enter Ending Date</string>
+    <string name="CustomerBtnSubmit">Submit</string>
     <string-array name="Currency">
         <item>Canadian dollar(CAD)</item>
         <item>U.S. dollar(USD)</item>

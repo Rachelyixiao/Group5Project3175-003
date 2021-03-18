@@ -25,9 +25,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="422dp"
-        android:layout_height="348dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="414dp"
+        android:layout_height="412dp"
+        android:layout_marginTop="43dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="360dp"
             android:layout_marginTop="60sp"
-            android:background="#E8E3E3"></ListView>
+            android:background="#00ACC1"></ListView>
     </LinearLayout>
 
     <ImageButton
