@@ -100,5 +100,14 @@
     <string name="comment_big">Input your estimated cost</string>
     <string name="settingTitle">settingTitle</string>
     <string name="reportTitle">reportTitle</string>
+    <string name="btnEdit">btnEdit</string>
+    <string name="addnewtitle">addnewtitle</string>
+    <string name="btnsave">btnsave</string>
+    <string name="txtAddNew">txtAddNew</string>
+    <string name="addnewhint">$</string>
+    <string name="txtcategory">Category</string>
+    <string name="txtDate">Date</string>
+    <string name="txtrecurring">Make recurring</string>
+
 
 </resources>
