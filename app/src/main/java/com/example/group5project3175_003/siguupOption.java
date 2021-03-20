@@ -28,7 +28,7 @@ public class siguupOption extends AppCompatActivity {
         btnsignup2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(siguupOption.this, registration1.class));
+                startActivity(new Intent(siguupOption.this, NewUser1.class));
             }
         });
 

@@ -19,8 +19,10 @@ public class NewUser3 extends AppCompatActivity {
         setContentView(R.layout.activity_new_user3);
         userDatabase = new UserDatabase(this);
         TextView acName = findViewById(R.id.acName);
-        Spinner budgetType = findViewById(R.id.budgettype);
-
+//        Spinner budgetType = findViewById(R.id.budgettype);
+        TextView salary = findViewById(R.id.salary);
+        TextView adIncome = findViewById(R.id.adIncome);
+        TextView saving = findViewById(R.id.saving);
         Button button = findViewById(R.id.btn3);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -30,27 +32,31 @@ public class NewUser3 extends AppCompatActivity {
 
 
                 String sacName = acName.getText().toString();
-                String sbudgetType = budgetType.getSelectedItem().toString();
+//                String sbudgetType = budgetType.getSelectedItem().toString();
                 String fName = user.getString("fName","");
                 String lName = user.getString("lName","");
                 String email = user.getString("email","");
                 String psw = user.getString("psw","");
                 String currency = user.getString("currency","");
-                String language = user.getString("language","");
+//                String language = user.getString("language","");
                 String alarm = user.getString("alarm","");
-                String theme = user.getString("theme","");
-
-
+//                String theme = user.getString("theme","");
+                String sSalary = salary.getText().toString();
+                String sAdIncome = adIncome.getText().toString();
+                String sSaving = saving.getText().toString();
                 isInserted = userDatabase.add(fName,
                             lName,
                             email,
                             psw,
                             currency,
-                            language,
                             alarm,
-                            theme,
                             sacName,
-                            sbudgetType
+                            sSalary,
+                            sAdIncome,
+                            sSaving
+
+
+
                 );
                     if (isInserted){
                         Toast.makeText(NewUser3.this,"Data added",Toast.LENGTH_LONG).show();

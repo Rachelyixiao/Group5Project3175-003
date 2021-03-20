@@ -6,16 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.chip.ChipGroup;
 
 public class NewUser2 extends AppCompatActivity {
 
@@ -26,7 +20,7 @@ public class NewUser2 extends AppCompatActivity {
 
         SharedPreferences user = getSharedPreferences("user",MODE_PRIVATE);
         Spinner currency = findViewById(R.id.currency);
-        Spinner language = findViewById(R.id.language);
+//        Spinner language = findViewById(R.id.language);
         Switch alarm = findViewById(R.id.alarm);
         Switch theme = findViewById(R.id.theme);
         Button button = findViewById(R.id.btn2);
@@ -73,10 +67,10 @@ public class NewUser2 extends AppCompatActivity {
             public void onClick(View v) {
 
               String  currencyChoice = currency.getSelectedItem().toString();
-              String languageChice = language.getSelectedItem().toString();
+//              String languageChice = language.getSelectedItem().toString();
                 SharedPreferences.Editor editor = user.edit();
                 editor.putString("currency",currencyChoice);
-                editor.putString("language",languageChice);
+//                editor.putString("language",languageChice);
                 editor.commit();
 
                 startActivity(new Intent(NewUser2.this,NewUser3.class));
