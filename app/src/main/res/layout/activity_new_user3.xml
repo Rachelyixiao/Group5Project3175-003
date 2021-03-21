@@ -8,27 +8,46 @@
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="142dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="56dp"
-        android:text="@string/NewUserBtn2"
+        android:layout_width="318dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btncontinue"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgettype"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/saving" />
 
-    <Spinner
-        android:id="@+id/budgettype"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/salary"
         android:layout_width="347dp"
         android:layout_height="58dp"
-        android:layout_marginTop="44dp"
-        android:entries="@array/BudgetType"
+        android:layout_marginTop="36dp"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/acName" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/adIncome"
+        android:layout_width="347dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salary" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/saving"
+        android:layout_width="347dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adIncome" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/acName"
@@ -73,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pgb3" />
+        app:srcCompat="@drawable/regi3bar" />
 
     <TextView
         android:id="@+id/textView9"
@@ -100,11 +119,33 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="@string/NewUser3Text4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/acName" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/NewUser3Text5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salary" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/NewUser3Text6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adIncome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

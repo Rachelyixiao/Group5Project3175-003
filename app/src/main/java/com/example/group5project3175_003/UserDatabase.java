@@ -2,6 +2,7 @@ package com.example.group5project3175_003;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -9,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class UserDatabase extends SQLiteOpenHelper {
     final static String DATABASE_NAME = "Userinfor.db";
-    final static int DATABASE_VERSION = 1;
+    final static int DATABASE_VERSION = 3;
     final static String TABLE1_NAME = "Userinf";
     final static String T1COL_0 = "Id";
     final static String T1COL_1 = "FName";
@@ -17,11 +18,13 @@ public class UserDatabase extends SQLiteOpenHelper {
     final static String T1COL_3 = "Email";
     final static String T1COL_4 = "Password";
     final static String T1COL_5 = "Currency";
-    final static String T1COL_6 = "Language";
-    final static String T1COL_7 = "Alarm";
-    final static String T1COL_8 = "Dark_mode";
-    final static String T1COL_9 = "Account_Name";
-    final static String T1COL_10 = "Budget_Type";
+//    final static String T1COL_6 = "Language";
+    final static String T1COL_6 = "Alarm";
+//    final static String T1COL_7 = "Dark_mode";
+    final static String T1COL_7 = "Account_Name";
+    final static String T1COL_8 = "Salary";
+    final static String T1COL_9 = "Additional_Income";
+    final static String T1COL_10 = "Saving";
 
     public UserDatabase(@Nullable Context context){
         super(context, DATABASE_NAME, null ,DATABASE_VERSION);
@@ -38,9 +41,9 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T1COL_5 + " TEXT,"+
                 T1COL_6 + " TEXT,"+
                 T1COL_7 + " TEXT,"+
-                T1COL_8 + " TEXT,"+
-                T1COL_9 + " TEXT,"+
-                T1COL_10 + " TEXT)";
+                T1COL_8 + " INTEGER,"+
+                T1COL_9 + " INTEGER,"+
+                T1COL_10 + " INTEGER)";
         db.execSQL(query);
 
     }
@@ -50,7 +53,7 @@ public class UserDatabase extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS "+TABLE1_NAME);
             onCreate(db);
     }
-    public boolean add(String fn,String ln,String email, String psw,String curr,String language,String ala,String theme,String acname,String bud){
+    public boolean add(String fn,String ln,String email, String psw,String curr,String ala,String acname,int Salary,int Additional_Income ,int Saving){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(T1COL_1,fn);
@@ -58,13 +61,24 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put(T1COL_3,email);
         values.put(T1COL_4,psw);
         values.put(T1COL_5,curr);
-        values.put(T1COL_6,language);
-        values.put(T1COL_7,ala);
-        values.put(T1COL_8,theme);
-        values.put(T1COL_9,acname);
-        values.put(T1COL_10,bud);
+        values.put(T1COL_6,ala);
+        values.put(T1COL_7,acname);
+        values.put(T1COL_8,Salary);
+        values.put(T1COL_9,Additional_Income);
+        values.put(T1COL_10,Saving);
 
         long r = sqLiteDatabase.insert(TABLE1_NAME, null, values);
         return r > 0;
     }
+
+    public Cursor viewData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        String query = "SELECT * FROM "+ TABLE1_NAME;
+        Cursor c = sqLiteDatabase.rawQuery(query,null);
+        return c;
+    }
+//    public Cursor changeData(){
+//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        String query = "SELECT * FROM "+ TABLE1_NAME;
+//        Cursor a = sqLiteDatabase.replace(TABLE1_NAME,"");
 }

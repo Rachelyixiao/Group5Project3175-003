@@ -44,7 +44,7 @@
     <string name="NewUser3Title">Set your account</string>
     <string name="NewUser3Text2">You can continue customizing it later</string>
     <string name="NewUser3Text3">ACCOUNT NAME</string>
-    <string name="NewUser3Text4">BUDGET TYPE</string>
+    <string name="NewUser3Text4">SALARY</string>
     <string name="NewUser3Hint1">My saving account</string>
     <string name="NewUserBtn2">WELCOME</string>
     <string name="CustomerReportTitle">Customize Report</string>
@@ -109,6 +109,10 @@
     <string name="txtcategory">Category</string>
     <string name="txtDate">Date</string>
     <string name="txtrecurring">Make recurring</string>
+    <string name="NewUser3Text5">ADDITIONAL INCOME</string>
+    <string name="NewUser3Text6">SAVING</string>
+    <string name="CheckAccountHint1">Enter your Email address</string>
+    <string name="CheckAccountHint2">Password</string>
 
 
 </resources>
