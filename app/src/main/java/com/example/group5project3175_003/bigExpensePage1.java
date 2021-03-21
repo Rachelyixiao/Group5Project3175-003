@@ -18,11 +18,15 @@ public class bigExpensePage1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_expense_page1);
 
+        EditText inputCost = findViewById(R.id.txtGetInput_big);
+
         ImageView btnTracker_big = findViewById(R.id.btnTracker_big);
         ImageView btnBig_big = findViewById(R.id.btnBig_big);
         ImageView btnReport_big = findViewById(R.id.btnReport_big);
         ImageView btnSetting_big = findViewById(R.id.btnSetting_big);
         ImageView btnSubmit_big = findViewById(R.id.btnSubmit_big);
+
+        bigCost = Double.parseDouble(inputCost.getText().toString());
 
         btnSubmit_big.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +34,7 @@ public class bigExpensePage1 extends AppCompatActivity {
                 startActivity(new Intent(bigExpensePage1.this, bigExpensePage2.class));
             }
         });
+
         btnTracker_big.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
