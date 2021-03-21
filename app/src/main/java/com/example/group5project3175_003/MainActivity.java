@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             String userId = getIntent().getStringExtra("userId");
             SQLiteDatabase db = userdatabase.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("Account_Name","Test2");
+            values.put("Account_Name","Onnesds");
             db.update("Userinf",values,"Id=?",new String[]{userId});
             Cursor c = userdatabase.viewData();
 
