@@ -3,11 +3,13 @@ package com.example.group5project3175_003;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CheckAccount extends AppCompatActivity {
 
@@ -20,38 +22,42 @@ public class CheckAccount extends AppCompatActivity {
         Button button = findViewById(R.id.loginBtn1);
         TextView userName = findViewById(R.id.userName);
         TextView psw = findViewById(R.id.password);
-        TextView output = findViewById(R.id.test);
+
         Button button2 = findViewById(R.id.Newbtn);
+        SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Cursor c = userdatabase.viewData();
-                String test = "";
+                String text = "";
                 String sUserName= userName.getText().toString();
                 String sPsw = psw.getText().toString();
-                int userid = 1;
+
                 if (c.getCount()>0){
                     while(c.moveToNext()){
 
                        if (sUserName.equals(c.getString(3))){
 
                            if (sPsw.equals(c.getString(4))){
-                               test = "Wellcome"+c.getString(2) + c.getString(1);
-                               Intent intent = new Intent(CheckAccount.this,MainActivity.class);
-                               intent.putExtra("userId",c.getString(0));
-                               startActivity(intent);
+                               text = "Wellcome"+c.getString(2) + c.getString(1);
+//                               Intent intent = new Intent(CheckAccount.this,MainActivity.class);
+//                               intent.putExtra("userId",c.getString(0));
 
+                               SharedPreferences.Editor editor = loginId.edit();
+                               editor.putString("loginId", c.getString(0));
+                               editor.commit();
+                               startActivity(new Intent(CheckAccount.this,MainActivity.class));
                            }
                            else{
-                               test = "Password incorrect!";
+                               text = "Password incorrect!";
                            }
                            break;
                        }
-                       userid ++;
-                          test = "Username not found";
+
+                          text = "Username not found";
 
                     }
-                    output.setText(test);
+                    Toast.makeText(CheckAccount.this,text,Toast.LENGTH_LONG).show();
                 }
                 c.close();
             }

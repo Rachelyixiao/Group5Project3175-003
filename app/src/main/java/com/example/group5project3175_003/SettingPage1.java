@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,7 +58,8 @@ public class SettingPage1 extends AppCompatActivity {
                     case 2:
                         startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://sites.google.com/view/moneyandmanagement3175003")));
                     case 3:
-                        startActivity(new Intent(SettingPage1.this,MainActivity.class));
+                        startActivity(new Intent(SettingPage1.this,CheckAccount.class));
+                        Toast.makeText(SettingPage1.this,"logged out",Toast.LENGTH_LONG).show();
                 }
             }
         });

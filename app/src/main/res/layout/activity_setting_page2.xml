@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".SettingPage2">
 
+    <Switch
+        android:id="@+id/setAlarm"
+        android:layout_width="347dp"
+        android:layout_height="58dp"
+        android:checked="true"
+        android:includeFontPadding="false"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/NewUser2R1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setAcName"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
     <ImageView
         android:id="@+id/settingTitle"
         android:layout_width="wrap_content"
@@ -39,77 +53,62 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtSettingChangeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/setFName"
+        android:layout_width="276dp"
+        android:layout_height="56dp"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="63dp"
         android:layout_marginRight="63dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="@string/txtSettingChangeName"
+        android:hint="@string/txtSettingChangeFirstName"
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtChangeProfiles"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/txtChangeProfiles" />
+
 
     <EditText
-        android:id="@+id/txtSettingChangeEmail"
+        android:id="@+id/setEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="71dp"
         android:layout_marginLeft="71dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="62dp"
         android:layout_marginRight="62dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txtSettingChangeEmail"
         android:inputType="textEmailAddress"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSettingChangeName"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/setFName" />
 
     <EditText
-        android:id="@+id/txtChangePhone"
+        android:id="@+id/setPsw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="71dp"
-        android:layout_marginLeft="71dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginRight="62dp"
-        android:ems="10"
-        android:hint="@string/txtSettingChangePhone"
-        android:inputType="phone"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSettingChangeEmail"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/txtSettingChangePW"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginRight="57dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginRight="59dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txtSettingChangePassword"
         android:inputType="textPassword"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtChangePhone"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/setEmail" />
 
     <Button
         android:id="@+id/btnSettingChange"
@@ -117,15 +116,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:layout_marginLeft="152dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="153dp"
         android:layout_marginRight="153dp"
         android:text="@string/btnSettingChange"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSettingChangePW" />
-
+        app:layout_constraintTop_toBottomOf="@+id/setAlarm" />
 
     <ImageView
         android:id="@+id/btnTracker_set1"
@@ -175,6 +174,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnReport_set1"
         app:srcCompat="@drawable/btnsetting" />
+
+    <EditText
+        android:id="@+id/setAcName"
+        android:layout_width="268dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/txtSettingChangeAcName"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setPsw" />
+
+    <EditText
+        android:id="@+id/setLName"
+        android:layout_width="273dp"
+        android:layout_height="59dp"
+        android:ems="10"
+        android:hint="@string/txtSettingChangeLastName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/setEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setFName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

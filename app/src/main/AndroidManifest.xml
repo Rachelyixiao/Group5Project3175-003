@@ -12,7 +12,6 @@
         <activity android:name=".NewUser1" />
         <activity android:name=".addnew"/>
         <activity android:name=".SettingPage3"></activity>
-        <activity android:name=".addnew" />
         <activity android:name=".reportMain" />
         <activity android:name=".guestRegistration2" />
         <activity android:name=".guestRegistration1" />

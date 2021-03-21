@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
         UserDatabase  userdatabase = new UserDatabase(this);
         ImageView btnTracker = findViewById(R.id.btnTracker);
         ImageView btnBig = findViewById(R.id.btnBig);
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView btnAdd = findViewById(R.id.btnAdd);
         Button button = findViewById(R.id.testBtn);
         TextView test = findViewById(R.id.test2);
-        Intent intent = getIntent();
+
 
         btnTracker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
     button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String userId = getIntent().getStringExtra("userId");
+            String userId = loginId.getString("loginId","");
             SQLiteDatabase db = userdatabase.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("Account_Name","Onnesds");
+            values.put("Account_Name","Onoeserika");
             db.update("Userinf",values,"Id=?",new String[]{userId});
             Cursor c = userdatabase.viewData();
 

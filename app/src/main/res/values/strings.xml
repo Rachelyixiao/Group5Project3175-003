@@ -11,7 +11,7 @@
     <string name="btnBigExpense">Big expense</string>
     <string name="txtTitleSettings">SETTINGS</string>
     <string name="txtChangeSetting">SET/CHANGE PROFILES</string>
-    <string name="txtSettingChangeName">Input your name</string>
+    <string name="txtSettingChangeFirstName">Input your First name</string>
     <string name="txtSettingChangeEmail">Input your email address</string>
     <string name="txtSettingChangePhone">Input your phone number</string>
     <string name="txtSettingChangePassword">Input your password</string>
@@ -113,6 +113,8 @@
     <string name="NewUser3Text6">SAVING</string>
     <string name="CheckAccountHint1">Enter your Email address</string>
     <string name="CheckAccountHint2">Password</string>
+    <string name="txtSettingChangeLastName">Input your LastName</string>
+    <string name="txtSettingChangeAcName">Input your Account Name</string>
 
 
 </resources>
