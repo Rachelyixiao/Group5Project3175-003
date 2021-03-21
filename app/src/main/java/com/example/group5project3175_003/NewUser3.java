@@ -1,5 +1,6 @@
 package com.example.group5project3175_003;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -41,9 +42,9 @@ public class NewUser3 extends AppCompatActivity {
 //                String language = user.getString("language","");
                 String alarm = user.getString("alarm","");
 //                String theme = user.getString("theme","");
-                String sSalary = salary.getText().toString();
-                String sAdIncome = adIncome.getText().toString();
-                String sSaving = saving.getText().toString();
+                int sSalary = Integer.parseInt(salary.getText().toString());
+                int sAdIncome = Integer.parseInt(adIncome.getText().toString());
+                int sSaving = Integer.parseInt(saving.getText().toString());
                 isInserted = userDatabase.add(fName,
                             lName,
                             email,
@@ -60,6 +61,7 @@ public class NewUser3 extends AppCompatActivity {
                 );
                     if (isInserted){
                         Toast.makeText(NewUser3.this,"Data added",Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(NewUser3.this,CheckAccount.class));
 
                     }
                     else{
