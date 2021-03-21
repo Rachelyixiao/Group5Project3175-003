@@ -4,41 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/subbg"
-    android:orientation="vertical"
-    tools:context=".SettingPage1">
+    tools:context=".SettingPage3">
+
 
     <ImageView
         android:id="@+id/settingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginRight="139dp"
         android:contentDescription="@string/settingTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settingtitle" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="360dp"
-        android:layout_marginTop="4dp"
-        android:orientation="vertical"
+
+    <TextView
+        android:id="@+id/txtAccountInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/txtSettingAccountTitle"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingTitle">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ListView
-            android:id="@+id/SettinglistView"
-            android:layout_width="match_parent"
-            android:layout_height="360dp"
-            android:layout_marginTop="60sp"
-            android:background="#3A3A3A"></ListView>
+    <TextView
+        android:id="@+id/txtAccountOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="205dp"
+        android:layout_marginLeft="205dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="206dp"
+        android:layout_marginRight="206dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/btnTracker_set1"

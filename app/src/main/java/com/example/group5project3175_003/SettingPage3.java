@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class SettingPage2 extends AppCompatActivity {
+public class SettingPage3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting_page2);
-
+        setContentView(R.layout.activity_setting_page3);
 
 
         ImageView btnTracker_set1 = findViewById(R.id.btnTracker_set1);
@@ -24,29 +23,30 @@ public class SettingPage2 extends AppCompatActivity {
         btnTracker_set1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingPage2.this, MainActivity.class));
+                startActivity(new Intent(SettingPage3.this, MainActivity.class));
             }
         });
 
         btnBig_set1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingPage2.this, bigExpensePage1.class));
+                startActivity(new Intent(SettingPage3.this, bigExpensePage1.class));
             }
         });
 
         btnReport_set1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingPage2.this, reportMain.class));
+                startActivity(new Intent(SettingPage3.this, reportMain.class));
             }
         });
 
         btnSetting_set1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingPage2.this, SettingPage1.class));
+                startActivity(new Intent(SettingPage3.this, SettingPage1.class));
             }
         });
+
     }
 }
