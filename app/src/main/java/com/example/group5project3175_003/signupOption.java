@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
-public class siguupOption extends AppCompatActivity {
+public class signupOption extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +20,14 @@ public class siguupOption extends AppCompatActivity {
         btnsignup1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(siguupOption.this, guestRegistration1.class));
+                startActivity(new Intent(signupOption.this, guestRegistration1.class));
             }
         });
 
         btnsignup2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(siguupOption.this, NewUser1.class));
+                startActivity(new Intent(signupOption.this, NewUser1.class));
             }
         });
 

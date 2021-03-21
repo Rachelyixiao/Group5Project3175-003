@@ -5,16 +5,15 @@
 
     <ImageView
         android:id="@+id/settingImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:contentDescription="@string/imglistviewlayout" />
 
     <TextView
+        android:id="@+id/txtSettingList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtSettingList"
-        android:textSize="20sp"
-        android:textColor="#111569"
-        />
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </LinearLayout>
