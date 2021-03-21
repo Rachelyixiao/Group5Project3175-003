@@ -6,21 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".SettingPage2">
 
-    <TextView
-        android:id="@+id/txtSettingTitle"
+    <ImageView
+        android:id="@+id/settingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:fontFamily="@font/abril_fatface"
-        android:text="@string/txtTitleSettings"
-        android:textSize="36sp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginRight="129dp"
+        android:contentDescription="@string/settingTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settingtitle" />
 
     <TextView
         android:id="@+id/txtChangeProfiles"
@@ -31,8 +30,9 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:fontFamily="@font/abril_fatface"
+        android:fontFamily="sans-serif"
         android:text="@string/txtChangeSetting"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,5 +125,56 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSettingChangePW" />
+
+
+    <ImageView
+        android:id="@+id/btnTracker_set1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnTracker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnBig_set1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btntracker" />
+
+    <ImageView
+        android:id="@+id/btnBig_set1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnBig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_set1"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_set1"
+        app:srcCompat="@drawable/btnbig" />
+
+    <ImageView
+        android:id="@+id/btnReport_set1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:contentDescription="@string/btnReport"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBig_set1"
+        app:srcCompat="@drawable/btnreport" />
+
+    <ImageView
+        android:id="@+id/btnSetting_set1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:contentDescription="@string/btnSetting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_set1"
+        app:srcCompat="@drawable/btnsetting" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

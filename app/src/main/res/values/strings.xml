@@ -53,6 +53,7 @@
     <string name="CustomerBtnSubmit">Submit</string>
     <string name="imglistviewlayout">an image</string>
     <string name="btnNewUser">New User</string>
+    <string name="txtSettingAccountTitle">Account Information</string>
     <string-array name="Currency">
         <item>Canadian dollar(CAD)</item>
         <item>U.S. dollar(USD)</item>
