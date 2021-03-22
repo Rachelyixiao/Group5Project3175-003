@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Group5Project3175003">
-        <activity android:name=".SettingPage3"></activity>
+        <activity android:name=".SettingPage3" />
         <activity android:name=".reportMain" />
         <activity android:name=".guestRegistration1" />
         <activity android:name=".signupOption" />
@@ -19,21 +19,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".CustomizeReport" />
         <activity android:name=".CheckAccount" />
-
         <activity android:name=".SettingPage2" />
-        <activity android:name=".SettingPage1" >
+        <activity android:name=".SettingPage1">
 
         </activity>
-
         <activity android:name=".NewUser3" />
         <activity android:name=".NewUser2" />
         <activity android:name=".NewUser1" />
-        <activity android:name=".bigExpensePage2" />
-        <activity android:name=".bigExpensePage1" />
+        <activity android:name=".big2" />
+        <activity android:name=".big1">
+
+
+        </activity>
         <activity android:name=".MainActivity" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

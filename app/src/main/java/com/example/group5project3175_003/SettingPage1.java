@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -18,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SettingPage1 extends AppCompatActivity {
-    String[] settings = {"Check/Modify User Info","Check User Account Info","PRIVACY POLICY","LOG OUT"};
+    String[] settings = {"Modify User Info","Check User Account Info","PRIVACY POLICY","LOG OUT"};
     int[] settingImages = {R.drawable.settingprofile,R.drawable.account1,
             R.drawable.settingprivacy,R.drawable.settinglogout};
 
@@ -28,9 +27,10 @@ public class SettingPage1 extends AppCompatActivity {
         setContentView(R.layout.activity_setting_page1);
 
 
-        List<HashMap<String,String>> aListSetting = new ArrayList<>();
 
-        for(int i =0;i<4;i++){
+        java.util.List<HashMap<String,String>> aListSetting = new ArrayList<>();
+
+        for(int i=0;i<settings.length;i++){
             HashMap<String,String> hashMapSetting = new HashMap<>();
             hashMapSetting.put("txt",settings[i]);
             hashMapSetting.put("images",Integer.toString(settingImages[i]));
@@ -55,11 +55,14 @@ public class SettingPage1 extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(new Intent(SettingPage1.this,SettingPage3.class));
+                        break;
                     case 2:
                         startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://sites.google.com/view/moneyandmanagement3175003")));
+                        break;
                     case 3:
                         startActivity(new Intent(SettingPage1.this,CheckAccount.class));
                         Toast.makeText(SettingPage1.this,"logged out",Toast.LENGTH_LONG).show();
+                        break;
                 }
             }
         });
@@ -79,7 +82,7 @@ public class SettingPage1 extends AppCompatActivity {
         btnBig_set1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingPage1.this, bigExpensePage1.class));
+                startActivity(new Intent(SettingPage1.this, big1.class));
             }
         });
 

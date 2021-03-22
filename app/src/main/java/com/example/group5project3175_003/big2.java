@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class bigExpensePage2 extends AppCompatActivity {
+public class big2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,28 +22,28 @@ public class bigExpensePage2 extends AppCompatActivity {
         btnTracker_big2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(bigExpensePage2.this, MainActivity.class));
+                startActivity(new Intent(big2.this, MainActivity.class));
             }
         });
 
         btnBig_big2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(bigExpensePage2.this, bigExpensePage1.class));
+                startActivity(new Intent(big2.this, big1.class));
             }
         });
 
         btnReport_big2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(bigExpensePage2.this, reportMain.class));
+                startActivity(new Intent(big2.this, reportMain.class));
             }
         });
 
         btnSetting_big2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(bigExpensePage2.this, SettingPage1.class));
+                startActivity(new Intent(big2.this, SettingPage1.class));
             }
         });
 
