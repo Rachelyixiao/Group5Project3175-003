@@ -15,7 +15,7 @@
     <string name="txtSettingChangeEmail">Input your email address</string>
     <string name="txtSettingChangePhone">Input your phone number</string>
     <string name="txtSettingChangePassword">Input your password</string>
-    <string name="btnSettingChange">SUBMIT</string>
+    <string name="btnSettingChange">SAVE</string>
     <string name="btnSettings">Settings</string>
     <string name="imgbtnhome">home</string>
     <string name="imgbtnaccount">account</string>

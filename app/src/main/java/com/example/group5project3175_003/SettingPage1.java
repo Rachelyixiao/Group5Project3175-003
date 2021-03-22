@@ -19,8 +19,8 @@ import java.util.List;
 
 public class SettingPage1 extends AppCompatActivity {
     String[] settings = {"Check/Modify User Info","Check User Account Info","PRIVACY POLICY","LOG OUT"};
-    int[] settingImages = {R.drawable.settingprofile,R.drawable.settingtheme,R.drawable.settinghelp,
-            R.drawable.settingprivacy,R.drawable.settinglogout,R.drawable.settingbackup};
+    int[] settingImages = {R.drawable.settingprofile,R.drawable.account1,
+            R.drawable.settingprivacy,R.drawable.settinglogout};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
