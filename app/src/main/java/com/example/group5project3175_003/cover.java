@@ -19,7 +19,7 @@ public class cover extends AppCompatActivity {
             @Override
             public void run() {
                 finish();
-                startActivity(new Intent(cover.this,siguupOption.class));
+                startActivity(new Intent(cover.this, signupOption.class));
             }
         };
 
