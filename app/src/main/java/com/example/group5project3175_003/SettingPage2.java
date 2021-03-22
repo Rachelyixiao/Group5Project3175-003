@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -21,28 +20,28 @@ public class SettingPage2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_page2);
-
+/*
         UserDatabase  userdatabase = new UserDatabase(this);
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
-        String loginID = loginId.getString("loginId","");
-        ImageView btnTracker_set1 = findViewById(R.id.btnTracker_set1);
-        ImageView btnBig_set1 = findViewById(R.id.btnBig_set1);
-        ImageView btnReport_set1 = findViewById(R.id.btnReport_set1);
-        ImageView btnSetting_set1 = findViewById(R.id.btnSetting_set1);
+        String loginID = loginId.getString("loginId","");*/
+        ImageView btnTracker_set2 = findViewById(R.id.btnTracker_set2);
+        ImageView btnBig_set2 = findViewById(R.id.btnBig_set2);
+        ImageView btnReport_set2 = findViewById(R.id.btnReport_set2);
+        ImageView btnSetting_set2 = findViewById(R.id.btnSetting_set2);
         Button button = findViewById(R.id.btnSettingChange);
-        int positionId = Integer.parseInt(loginID)-1;
+      //  int positionId = Integer.parseInt(loginID)-1;
         TextView setFName = findViewById(R.id.setFName);
         TextView setLName = findViewById(R.id.setLName);
         TextView setEmail = findViewById(R.id.setEmail);
         TextView setPsw = findViewById(R.id.setPsw);
         TextView setAcName = findViewById(R.id.setAcName);
-        Switch setAlarm = findViewById(R.id.setAlarm);
-        Cursor c = userdatabase.viewData();
-        c.moveToPosition(positionId);
-         String alarm = c.getString(6);
+      //  Switch setAlarm = findViewById(R.id.setAlarm);
+      //  Cursor c = userdatabase.viewData();
+      //  c.moveToPosition(positionId);
+     //    String alarm = c.getString(6);
 
 
-        setAlarm.setChecked(alarm.equals("On"));
+      //  setAlarm.setChecked(alarm.equals("On"));
 //        setAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //            @Override
 //            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -56,8 +55,7 @@ public class SettingPage2 extends AppCompatActivity {
 //            }
 //        });
 
-
-
+/*
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,32 +93,32 @@ public class SettingPage2 extends AppCompatActivity {
             }
         });
 
+*/
 
 
 
-
-        btnTracker_set1.setOnClickListener(new View.OnClickListener() {
+        btnTracker_set2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingPage2.this, MainActivity.class));
             }
         });
 
-        btnBig_set1.setOnClickListener(new View.OnClickListener() {
+        btnBig_set2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingPage2.this, bigExpensePage1.class));
+                startActivity(new Intent(SettingPage2.this, big1.class));
             }
         });
 
-        btnReport_set1.setOnClickListener(new View.OnClickListener() {
+        btnReport_set2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingPage2.this, reportMain.class));
             }
         });
 
-        btnSetting_set1.setOnClickListener(new View.OnClickListener() {
+        btnSetting_set2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingPage2.this, SettingPage1.class));

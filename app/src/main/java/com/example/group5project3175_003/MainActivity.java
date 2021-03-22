@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
-        UserDatabase  userdatabase = new UserDatabase(this);
+        UserDatabase userdatabase = new UserDatabase(this);
         ImageView btnTracker = findViewById(R.id.btnTracker);
         ImageView btnBig = findViewById(R.id.btnBig);
         ImageView btnReport = findViewById(R.id.btnReport);
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView btnAdd = findViewById(R.id.btnAdd);
         Button button = findViewById(R.id.testBtn);
         TextView test = findViewById(R.id.test2);
-
 
         btnTracker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnBig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, bigExpensePage1.class));
+                startActivity(new Intent(MainActivity.this, big1.class));
             }
         });
 

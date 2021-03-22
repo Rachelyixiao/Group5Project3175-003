@@ -29,7 +29,7 @@ public class reportMain extends AppCompatActivity {
         btnbig_rpt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(reportMain.this, bigExpensePage1.class));
+                startActivity(new Intent(reportMain.this, big1.class));
             }
         });
 

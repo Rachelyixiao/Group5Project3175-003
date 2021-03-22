@@ -8,8 +8,8 @@
 
     <Switch
         android:id="@+id/setAlarm"
-        android:layout_width="347dp"
-        android:layout_height="58dp"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
         android:checked="true"
         android:includeFontPadding="false"
         android:paddingLeft="10dp"
@@ -52,25 +52,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <EditText
         android:id="@+id/setFName"
         android:layout_width="276dp"
         android:layout_height="56dp"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="63dp"
         android:layout_marginRight="63dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/txtSettingChangeFirstName"
         android:inputType="textPersonName"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtChangeProfiles" />
-
 
     <EditText
         android:id="@+id/setEmail"
@@ -78,16 +77,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="71dp"
         android:layout_marginLeft="71dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="62dp"
         android:layout_marginRight="62dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/txtSettingChangeEmail"
         android:inputType="textEmailAddress"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setFName" />
 
@@ -95,18 +94,17 @@
         android:id="@+id/setPsw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginLeft="74dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginRight="59dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginRight="104dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/txtSettingChangePassword"
         android:inputType="textPassword"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setEmail" />
 
@@ -127,19 +125,19 @@
         app:layout_constraintTop_toBottomOf="@+id/setAlarm" />
 
     <ImageView
-        android:id="@+id/btnTracker_set1"
+        android:id="@+id/btnTracker_set2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnTracker"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnBig_set1"
+        app:layout_constraintEnd_toStartOf="@+id/btnBig_set2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btntracker" />
 
     <ImageView
-        android:id="@+id/btnBig_set1"
+        android:id="@+id/btnBig_set2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -148,23 +146,12 @@
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnBig"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnReport_set1"
-        app:layout_constraintStart_toEndOf="@+id/btnTracker_set1"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_set2"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_set2"
         app:srcCompat="@drawable/btnbig" />
 
     <ImageView
-        android:id="@+id/btnReport_set1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:contentDescription="@string/btnReport"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnBig_set1"
-        app:srcCompat="@drawable/btnreport" />
-
-    <ImageView
-        android:id="@+id/btnSetting_set1"
+        android:id="@+id/btnSetting_set2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -172,18 +159,33 @@
         android:contentDescription="@string/btnSetting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnReport_set1"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_set2"
         app:srcCompat="@drawable/btnsetting" />
+
+    <ImageView
+        android:id="@+id/btnReport_set2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:contentDescription="@string/btnReport"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBig_set2"
+        app:srcCompat="@drawable/btnreport" />
 
     <EditText
         android:id="@+id/setAcName"
         android:layout_width="268dp"
         android:layout_height="65dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="71dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:ems="10"
         android:hint="@string/txtSettingChangeAcName"
         android:inputType="textPersonName"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setPsw" />
@@ -191,15 +193,17 @@
     <EditText
         android:id="@+id/setLName"
         android:layout_width="273dp"
-        android:layout_height="59dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="@string/txtSettingChangeLastName"
         android:inputType="textPersonName"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/setEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setFName" />
+        app:layout_constraintTop_toBottomOf="@+id/setFName"
+        app:layout_constraintVertical_bias="0.187" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

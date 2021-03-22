@@ -15,10 +15,10 @@ public class SettingPage3 extends AppCompatActivity {
         setContentView(R.layout.activity_setting_page3);
 
 
-        ImageView btnTracker_set1 = findViewById(R.id.btnTracker_set1);
-        ImageView btnBig_set1 = findViewById(R.id.btnBig_set1);
-        ImageView btnReport_set1 = findViewById(R.id.btnReport_set1);
-        ImageView btnSetting_set1 = findViewById(R.id.btnSetting_set1);
+        ImageView btnTracker_set1 = findViewById(R.id.btnTracker_set2);
+        ImageView btnBig_set1 = findViewById(R.id.btnBig_set2);
+        ImageView btnReport_set1 = findViewById(R.id.btnReport_set2);
+        ImageView btnSetting_set1 = findViewById(R.id.btnSetting_set2);
 
         btnTracker_set1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +30,7 @@ public class SettingPage3 extends AppCompatActivity {
         btnBig_set1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingPage3.this, bigExpensePage1.class));
+                startActivity(new Intent(SettingPage3.this, big1.class));
             }
         });
 

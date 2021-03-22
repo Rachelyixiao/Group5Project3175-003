@@ -10,7 +10,7 @@
     <string name="imgBigExpense">imgBigExpense</string>
     <string name="btnBigExpense">Big expense</string>
     <string name="txtTitleSettings">SETTINGS</string>
-    <string name="txtChangeSetting">SET/CHANGE PROFILES</string>
+    <string name="txtChangeSetting">CHANGE PROFILES</string>
     <string name="txtSettingChangeFirstName">Input your First name</string>
     <string name="txtSettingChangeEmail">Input your email address</string>
     <string name="txtSettingChangePhone">Input your phone number</string>
@@ -29,7 +29,7 @@
     <string name="NewUser1Text5">EMAIL ADDRESS</string>
     <string name="NewUser1Text6">PASSWORD</string>
     <string name="NewUser1Text7">PASSWORD</string>
-    <string name="NewUser1Hint1">8character is minimum</string>
+    <string name="NewUser1Hint1">8character is maximum</string>
     <string name="NewUser1Hint2">Re-enter your password</string>
     <string name="NewUser2Text1">STEP 2/3</string>
     <string name="NewUser2Title1">Make the basic settings</string>
@@ -115,6 +115,18 @@
     <string name="CheckAccountHint2">Password</string>
     <string name="txtSettingChangeLastName">Input your LastName</string>
     <string name="txtSettingChangeAcName">Input your Account Name</string>
+    <string name="btnTestCheck">Check</string>
+    <string name="btnTestAdd">Back to register</string>
+    <string name="txtbigdate">Input the due date</string>
+    <string-array name="bigCategory">
+        <item>Gift</item>
+        <item>Travel</item>
+        <item>Education</item>
+        <item>Health</item>
+        <item>Investment</item>
+        <item>Others</item>
+    </string-array>
+    <string name="txtBigDes">Write some notes</string>
 
 
 </resources>
