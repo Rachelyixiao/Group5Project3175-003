@@ -43,6 +43,7 @@ public class NewUser2 extends AppCompatActivity {
                 }
             }
         });
+
         theme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

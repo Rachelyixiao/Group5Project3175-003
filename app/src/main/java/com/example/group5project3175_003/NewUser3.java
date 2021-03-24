@@ -31,7 +31,6 @@ public class NewUser3 extends AppCompatActivity {
             public void onClick(View v) {
                 boolean isInserted;
 
-
                 String sacName = acName.getText().toString();
 //                String sbudgetType = budgetType.getSelectedItem().toString();
                 String fName = user.getString("fName","");
@@ -45,24 +44,21 @@ public class NewUser3 extends AppCompatActivity {
                 int sSalary = Integer.parseInt(salary.getText().toString());
                 int sAdIncome = Integer.parseInt(adIncome.getText().toString());
                 int sSaving = Integer.parseInt(saving.getText().toString());
+
+
                 isInserted = userDatabase.add(fName,
-                            lName,
-                            email,
-                            psw,
-                            currency,
-                            alarm,
-                            sacName,
-                            sSalary,
-                            sAdIncome,
-                            sSaving
-
-
-
-                );
+                        lName,
+                        email,
+                        psw,
+                        currency,
+                        alarm,
+                        sacName,
+                        sSalary,
+                        sAdIncome,
+                        sSaving);
                     if (isInserted){
                         Toast.makeText(NewUser3.this,"Data added",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(NewUser3.this,CheckAccount.class));
-
                     }
                     else{
                         Toast.makeText(NewUser3.this,"Data not added",Toast.LENGTH_LONG).show();

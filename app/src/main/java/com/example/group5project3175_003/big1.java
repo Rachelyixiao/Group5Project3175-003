@@ -19,9 +19,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class big1 extends AppCompatActivity {
-    UserDatabase mydatabase;
+    UserDatabase userDatabase;
     double bigcost;
-    Date bdate;
+    String bdate;
     String bcate;
     String bdes;
     @Override
@@ -29,7 +29,7 @@ public class big1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_expense_page1);
 
-        mydatabase = new UserDatabase(this);
+        userDatabase = new UserDatabase(this);
 
         EditText inputCost = findViewById(R.id.txtGetInput_big);
 
@@ -37,9 +37,9 @@ public class big1 extends AppCompatActivity {
         Spinner bigcateGroup = findViewById(R.id.spnBigCate);
         EditText bigDes = findViewById(R.id.txtBigDes);
 
-        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+    //    DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
 
-        SharedPreferences bigEx = getSharedPreferences("bigExpense",MODE_PRIVATE);
+      //  SharedPreferences bigEx = getSharedPreferences("bigExpense",MODE_PRIVATE);
 
         ImageView btnTracker_big = findViewById(R.id.btnTracker_big1);
         ImageView btnBig_big = findViewById(R.id.btnBig_big1);
@@ -55,17 +55,11 @@ public class big1 extends AppCompatActivity {
                 bigcost = Double.parseDouble(inputCost.getText().toString());
                 bigoutput.setText("Your big cost is "+bigcost);
                 bcate = bigcateGroup.getSelectedItem().toString();
-
-
-                try {
-                    bdate = df.parse(bigdate.getText().toString());
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
+                bdate = bigdate.getText().toString();
                 bdes = bigDes.getText().toString();
 
-                boolean isInserted = mydatabase.addBig(bdate,bcate,bdes);
+
+                boolean isInserted = userDatabase.addBig(bdate,bcate,bdes,1);
                 if(isInserted){
                     Toast.makeText(big1.this,"Big expense added",Toast.LENGTH_LONG).show();
                 }
@@ -76,6 +70,8 @@ public class big1 extends AppCompatActivity {
                 //startActivity(new Intent(big1.this, big2.class));
             }
         });
+
+
 
         btnTracker_big.setOnClickListener(new View.OnClickListener() {
             @Override
