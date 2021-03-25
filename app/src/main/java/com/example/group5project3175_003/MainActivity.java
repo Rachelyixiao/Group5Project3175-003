@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,17 +70,35 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             String userId = loginId.getString("loginId","");
-            SQLiteDatabase db = userdatabase.getWritableDatabase();
+
+     /*       SQLiteDatabase db = userdatabase.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("Account_Name","Onoeserika");
             db.update("Userinf",values,"Id=?",new String[]{userId});
             Cursor c = userdatabase.viewData();
 
             int id = Integer.parseInt(userId)-1;
+
+
             c.moveToPosition(id);
 
 
             test.setText(c.getString(7));
+
+      */
+            int loginid = Integer.parseInt(userId);
+   /*         String fn = "222";
+            String ln="333";
+            String email = "eeeeee";
+            String ps = "2";
+            String an = "22";
+            boolean isUpdated = userdatabase.updateUserData(loginid,fn,ln,email,ps,an);
+            if(isUpdated)
+                Toast.makeText(MainActivity.this,"Record Updated",Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(MainActivity.this,"Record not Updated",Toast.LENGTH_LONG).show();
+
+*/
         }
     });
     }

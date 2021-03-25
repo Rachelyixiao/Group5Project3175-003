@@ -19,6 +19,24 @@ public class reportMain extends AppCompatActivity {
         ImageView btnReport_rpt1 = findViewById(R.id.btnReport_rpt1);
         ImageView btnSetting_rpt1 = findViewById(R.id.btnSetting_rpt1);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         btnTracker_rpt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
