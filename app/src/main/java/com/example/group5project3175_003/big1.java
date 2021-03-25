@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class big1 extends AppCompatActivity {
-    UserDatabase userDatabase;
+    UserDatabase userdatabase;
     double bigcost;
     String bdate;
     String bcate;
@@ -31,33 +31,18 @@ public class big1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_expense_page1);
 
-        SharedPreferences user = getSharedPreferences("user",MODE_PRIVATE);
+        userdatabase = new UserDatabase(this);
 
-        userDatabase = new UserDatabase(this);
+        SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+        String loginID = loginId.getString("loginId","");
+
+        int b_uid = Integer.parseInt(loginID);
+
 
         EditText inputCost = findViewById(R.id.txtGetInput_big);
         EditText bigdate = findViewById(R.id.txtBigDate);
         Spinner bigcateGroup = findViewById(R.id.spnBigCate);
         EditText bigDes = findViewById(R.id.txtBigDes);
-
-    /*    SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
-
-
-        SharedPreferences.Editor editor = loginId.edit();
-        Cursor c = userDatabase.viewData();
-        editor.putString("loginId", c.getString(1));
-        editor.apply();
-
-        int userid = loginId.getInt("loginId",0);
-
-     */
-
-     //  String login = loginID.getString("loginId","0");
-     //  int id = Integer.parseInt(login);
-
-    //    DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-
-      //  SharedPreferences bigEx = getSharedPreferences("bigExpense",MODE_PRIVATE);
 
         ImageView btnTracker_big = findViewById(R.id.btnTracker_big1);
         ImageView btnBig_big = findViewById(R.id.btnBig_big1);
@@ -72,15 +57,15 @@ public class big1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bigcost = Double.parseDouble(inputCost.getText().toString());
+
                 bigoutput.setText("Your big cost is "+bigcost);
 
                 bcate = bigcateGroup.getSelectedItem().toString();
                 bdate = bigdate.getText().toString();
                 bdes = bigDes.getText().toString();
 
-                int userId = user.getInt("uid",0);
 
-                boolean isInserted = userDatabase.addBig(bdate,bcate,bdes,userId);
+                boolean isInserted = userdatabase.addBig(bdate,bcate,bdes,b_uid);
 
                 if(isInserted){
                     Toast.makeText(big1.this,"Big expense added",Toast.LENGTH_LONG).show();
@@ -89,7 +74,7 @@ public class big1 extends AppCompatActivity {
                     Toast.makeText(big1.this,"Big expenses not added",Toast.LENGTH_LONG).show();
 
 
-                //startActivity(new Intent(big1.this, big2.class));
+                startActivity(new Intent(big1.this, big2.class));
             }
         });
 
