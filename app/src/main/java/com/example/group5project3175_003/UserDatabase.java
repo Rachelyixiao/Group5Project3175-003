@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class UserDatabase extends SQLiteOpenHelper {
     final static String DATABASE_NAME = "Userinfor.db"; //database name
-    final static int DATABASE_VERSION = 6;              //database version
+    final static int DATABASE_VERSION = 1;              //database version
     final static String TABLE1_NAME = "Userinf";        //table 1 user table
     //User table columns name
     final static String T1COL_0 = "UID";
@@ -204,19 +204,33 @@ public class UserDatabase extends SQLiteOpenHelper {
             return false;
     }
 
-    public boolean updateUserData(int id,String fn,String ln,String email,String ps,String an){
+    public boolean updateUserData(String loginID,String sAcName,String sFName,String sLName,String sEmail,String sPsw,String setAlarm){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues values= new ContentValues();
-        values.put(T1COL_1,fn);
-        values.put(T1COL_2,ln);
-        values.put(T1COL_3,email);
-        values.put(T1COL_4,ps);
-        values.put(T1COL_7,an);
-        int d = sqLiteDatabase.update(TABLE1_NAME,values,"id=?",new String[]{Integer.toString(id)});
-        if(d>0)
-            return true;
-        else
-            return false;
+        if (!sAcName.isEmpty()) {
+            values.put(T1COL_7, sAcName);
+        }
+        if (!sFName.isEmpty()) {
+            values.put(T1COL_1, sFName);
+        }
+        if (!sLName.isEmpty()) {
+            values.put(T1COL_2, sLName);
+        }
+        if (!sEmail.isEmpty()) {
+            values.put(T1COL_3, sEmail);
+        }
+        if (!sPsw.isEmpty()) {
+            values.put(T1COL_4, sPsw);
+        }
+        if (setAlarm.equals("On")) {
+            values.put(T1COL_6,"On");
+        }
+        else{
+            values.put(T1COL_6,"Off");
+        }
+        int d =sqLiteDatabase.update("Userinf",values,"UID=?",new String[]{loginID});
+
+            return d>0;
     }
 
     public  boolean updateBigDate(int id,String date,String cate,String des){
@@ -231,12 +245,4 @@ public class UserDatabase extends SQLiteOpenHelper {
         else
             return false;
     }
-
-   // public  boolean updateTransaction(){}
-
-
-//    public Cursor changeData(){
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        String query = "SELECT * FROM "+ TABLE1_NAME;
-//        Cursor a = sqLiteDatabase.replace(TABLE1_NAME,"");
 }
