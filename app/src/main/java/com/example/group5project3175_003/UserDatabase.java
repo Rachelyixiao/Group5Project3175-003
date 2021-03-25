@@ -230,7 +230,10 @@ public class UserDatabase extends SQLiteOpenHelper {
         }
         int d =sqLiteDatabase.update("Userinf",values,"UID=?",new String[]{loginID});
 
-        return d>0;
+
+            return d>0;
+
+
     }
 
     public  boolean updateBigDate(int id,String date,String cate,String des){

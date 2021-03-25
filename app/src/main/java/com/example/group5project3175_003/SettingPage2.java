@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -40,10 +41,14 @@ public class SettingPage2 extends AppCompatActivity {
         Switch setAlarm = findViewById(R.id.setAlarm);
         Cursor c = userdatabase.viewData();
         c.moveToPosition(positionId);
-         String alarm = c.getString(6);
+
+        String alarm = c.getString(6);
+
 
 
         setAlarm.setChecked(alarm.equals("On"));
+
+
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,31 +60,21 @@ public class SettingPage2 extends AppCompatActivity {
                 String sEmail = setEmail.getText().toString();
                 String sPsw = setPsw.getText().toString();
                 String sAcName = setAcName.getText().toString();
+                String sAlarm ;
+                if (setAlarm.isChecked()){
+                    sAlarm = "On";
+                }
+                else {
+                    sAlarm = "Off";
+                }
 
-                SQLiteDatabase db = userdatabase.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                if (!sAcName.isEmpty()) {
-                    values.put("Account_Name", sAcName);
+                if (userdatabase.updateUserData(loginID,sAcName,sFName,sLName,sEmail,sPsw,sAlarm)){
+                    Toast.makeText(SettingPage2.this,"Change saved",Toast.LENGTH_LONG).show();
                 }
-                if (!sFName.isEmpty()) {
-                    values.put("FName", sFName);
+                else {
+                    Toast.makeText(SettingPage2.this,"Change not saved",Toast.LENGTH_LONG).show();
                 }
-                if (!sLName.isEmpty()) {
-                    values.put("LName", sLName);
-                }
-                if (!sEmail.isEmpty()) {
-                    values.put("Email", sEmail);
-                }
-                if (!sPsw.isEmpty()) {
-                    values.put("Password", sPsw);
-                }
-                if (setAlarm.isChecked()) {
-                    values.put("Alarm","On");
-                }
-                else{
-                    values.put("Alarm","Off");
-                }
-                db.update("Userinf",values,"UID=?",new String[]{loginID});
+
             }
         });
 

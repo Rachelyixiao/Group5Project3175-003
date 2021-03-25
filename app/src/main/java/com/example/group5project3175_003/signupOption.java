@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class signupOption extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class signupOption extends AppCompatActivity {
 
         ImageView btnsignup1 = findViewById(R.id.btnsignup1);
         ImageView btnsignup2 = findViewById(R.id.btnsignup2);
+        Button button = findViewById(R.id.loginOP);
 
         btnsignup1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,11 @@ public class signupOption extends AppCompatActivity {
             }
         });
 
-
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(signupOption.this,CheckAccount.class));
+            }
+        });
     }
 }
