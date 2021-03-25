@@ -84,7 +84,7 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T2COL_6 + " TEXT,"+
                 T2COL_7 + " TEXT,"+
                 T2COL_8 + " INTEGER,"+
-                " FOREIGN KEY ("+T2COL_8+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+             " FOREIGN KEY ("+T2COL_8+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
         db.execSQL(query2);
 
         String query3 = "CREATE TABLE "+ TABLE3_NAME+"("+
@@ -93,7 +93,7 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T3COL_2 +" TEXT,"+
                 T3COL_3 +" TEXT,"+
                 T3COL_4 +" INTEGER,"+
-              " FOREIGN KEY ("+T3COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+             " FOREIGN KEY ("+T3COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
         db.execSQL(query3);
     }
 
@@ -134,7 +134,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put(T3COL_3,Desc);
         values.put(T3COL_4,b_uid);
 
-        long r = sqLiteDatabase.insert(TABLE2_NAME,null,values);
+        long r = sqLiteDatabase.insert(TABLE3_NAME,null,values);
         if(r>0)
             return  true;
         else
@@ -154,7 +154,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put(T2COL_7,t_desc);
         values.put(T2COL_8,t_uid);
 
-        long r = sqLiteDatabase.insert(TABLE3_NAME,null,values);
+        long r = sqLiteDatabase.insert(TABLE2_NAME,null,values);
         if(r>0)
             return  true;
         else

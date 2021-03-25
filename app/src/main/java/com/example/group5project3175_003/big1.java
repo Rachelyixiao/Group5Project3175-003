@@ -2,8 +2,10 @@ package com.example.group5project3175_003;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,13 +31,29 @@ public class big1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_expense_page1);
 
+        SharedPreferences user = getSharedPreferences("user",MODE_PRIVATE);
+
         userDatabase = new UserDatabase(this);
 
         EditText inputCost = findViewById(R.id.txtGetInput_big);
-
         EditText bigdate = findViewById(R.id.txtBigDate);
         Spinner bigcateGroup = findViewById(R.id.spnBigCate);
         EditText bigDes = findViewById(R.id.txtBigDes);
+
+    /*    SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+
+
+        SharedPreferences.Editor editor = loginId.edit();
+        Cursor c = userDatabase.viewData();
+        editor.putString("loginId", c.getString(1));
+        editor.apply();
+
+        int userid = loginId.getInt("loginId",0);
+
+     */
+
+     //  String login = loginID.getString("loginId","0");
+     //  int id = Integer.parseInt(login);
 
     //    DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
 
@@ -45,6 +63,7 @@ public class big1 extends AppCompatActivity {
         ImageView btnBig_big = findViewById(R.id.btnBig_big1);
         ImageView btnReport_big = findViewById(R.id.btnReport_big1);
         ImageView btnSetting_big = findViewById(R.id.btnSetting_big1);
+
         ImageView btnSubmit_big = findViewById(R.id.btnSubmit_big);
 
         TextView bigoutput = findViewById(R.id.txtBigOuttest);
@@ -54,12 +73,15 @@ public class big1 extends AppCompatActivity {
             public void onClick(View v) {
                 bigcost = Double.parseDouble(inputCost.getText().toString());
                 bigoutput.setText("Your big cost is "+bigcost);
+
                 bcate = bigcateGroup.getSelectedItem().toString();
                 bdate = bigdate.getText().toString();
                 bdes = bigDes.getText().toString();
 
+                int userId = user.getInt("uid",0);
 
-                boolean isInserted = userDatabase.addBig(bdate,bcate,bdes,1);
+                boolean isInserted = userDatabase.addBig(bdate,bcate,bdes,userId);
+
                 if(isInserted){
                     Toast.makeText(big1.this,"Big expense added",Toast.LENGTH_LONG).show();
                 }
