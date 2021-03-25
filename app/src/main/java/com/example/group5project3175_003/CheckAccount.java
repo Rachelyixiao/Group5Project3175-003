@@ -24,7 +24,8 @@ public class CheckAccount extends AppCompatActivity {
         TextView psw = findViewById(R.id.password);
 
         Button button2 = findViewById(R.id.Newbtn);
-        SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+       SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +40,7 @@ public class CheckAccount extends AppCompatActivity {
                        if (sUserName.equals(c.getString(3))){
 
                            if (sPsw.equals(c.getString(4))){
-                               text = "Wellcome"+c.getString(2) + c.getString(1);
+                               text = "Welcome "+c.getString(2) + c.getString(1);
 //                               Intent intent = new Intent(CheckAccount.this,MainActivity.class);
 //                               intent.putExtra("userId",c.getString(0));
 
