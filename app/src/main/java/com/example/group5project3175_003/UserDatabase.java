@@ -22,9 +22,9 @@ public class UserDatabase extends SQLiteOpenHelper {
     final static String T1COL_3 = "Email";
     final static String T1COL_4 = "Password";
     final static String T1COL_5 = "Currency";
-//    final static String T1COL_6 = "Language";
+    //    final static String T1COL_6 = "Language";
     final static String T1COL_6 = "Alarm";
-//    final static String T1COL_7 = "Dark_mode";
+    //    final static String T1COL_7 = "Dark_mode";
     final static String T1COL_7 = "Account_Name";
     final static String T1COL_8 = "Salary";
     final static String T1COL_9 = "Additional_Income";
@@ -93,17 +93,17 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T3COL_2 +" TEXT,"+
                 T3COL_3 +" TEXT,"+
                 T3COL_4 +" INTEGER,"+
-              " FOREIGN KEY ("+T3COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+                " FOREIGN KEY ("+T3COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
         db.execSQL(query3);
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS "+TABLE1_NAME);
-            db.execSQL("DROP TABLE IF EXISTS "+TABLE2_NAME);
-            db.execSQL("DROP TABLE IF EXISTS "+TABLE3_NAME);
-            onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE1_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE2_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE3_NAME);
+        onCreate(db);
     }
 
     public boolean add(String fn,String ln,String email, String psw,String curr,String ala,
@@ -230,7 +230,10 @@ public class UserDatabase extends SQLiteOpenHelper {
         }
         int d =sqLiteDatabase.update("Userinf",values,"UID=?",new String[]{loginID});
 
+
             return d>0;
+
+
     }
 
     public  boolean updateBigDate(int id,String date,String cate,String des){

@@ -32,6 +32,7 @@ public class SettingPage2 extends AppCompatActivity {
         ImageView btnSetting_set2 = findViewById(R.id.btnSetting_set2);
         Button button = findViewById(R.id.btnSettingChange);
         int positionId = Integer.parseInt(loginID)-1;
+
         TextView setFName = findViewById(R.id.setFName);
         TextView setLName = findViewById(R.id.setLName);
         TextView setEmail = findViewById(R.id.setEmail);
@@ -40,7 +41,9 @@ public class SettingPage2 extends AppCompatActivity {
         Switch setAlarm = findViewById(R.id.setAlarm);
         Cursor c = userdatabase.viewData();
         c.moveToPosition(positionId);
+
         String alarm = c.getString(6);
+
 
 
         setAlarm.setChecked(alarm.equals("On"));
@@ -71,30 +74,7 @@ public class SettingPage2 extends AppCompatActivity {
                 else {
                     Toast.makeText(SettingPage2.this,"Change not saved",Toast.LENGTH_LONG).show();
                 }
-//                SQLiteDatabase db = userdatabase.getWritableDatabase();
-//                ContentValues values = new ContentValues();
-//                if (!sAcName.isEmpty()) {
-//                    values.put("Account_Name", sAcName);
-//                }
-//                if (!sFName.isEmpty()) {
-//                    values.put("FName", sFName);
-//                }
-//                if (!sLName.isEmpty()) {
-//                    values.put("LName", sLName);
-//                }
-//                if (!sEmail.isEmpty()) {
-//                    values.put("Email", sEmail);
-//                }
-//                if (!sPsw.isEmpty()) {
-//                    values.put("Password", sPsw);
-//                }
-//                if (setAlarm.isChecked()) {
-//                    values.put("Alarm","On");
-//                }
-//                else{
-//                    values.put("Alarm","Off");
-//                }
-//                db.update("Userinf",values,"UID=?",new String[]{loginID});
+
             }
         });
 
