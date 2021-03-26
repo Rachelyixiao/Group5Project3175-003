@@ -17,14 +17,15 @@
         <activity android:name=".reportMain" />
         <activity android:name=".guestRegistration1" />
         <activity android:name=".signupOption" />
-        <activity android:name=".cover" />
+        <activity android:name=".cover" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".CustomizeReport" />
         <activity android:name=".CheckAccount">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".SettingPage2" />
         <activity android:name=".SettingPage1" />
@@ -34,7 +35,6 @@
         <activity android:name=".big2" />
         <activity android:name=".big1" />
         <activity android:name=".MainActivity" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
