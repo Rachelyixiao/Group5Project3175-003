@@ -8,7 +8,7 @@
     tools:context=".reportMain">
 
     <ImageView
-        android:id="@+id/reportTitle_rpt1"
+        android:id="@+id/reportTitle_rpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -20,19 +20,19 @@
         app:srcCompat="@drawable/reporttitle" />
 
     <ImageView
-        android:id="@+id/btnTracker_rpt1"
+        android:id="@+id/btnTracker_rpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnTracker"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnbig_rpt1"
+        app:layout_constraintEnd_toStartOf="@+id/btnbig_rpt"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btntracker" />
 
     <ImageView
-        android:id="@+id/btnbig_rpt1"
+        android:id="@+id/btnbig_rpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -41,12 +41,12 @@
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnBig"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnReport_rpt1"
-        app:layout_constraintStart_toEndOf="@+id/btnTracker_rpt1"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_rpt"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_rpt"
         app:srcCompat="@drawable/btnbig" />
 
     <ImageView
-        android:id="@+id/btnReport_rpt1"
+        android:id="@+id/btnReport_rpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -55,12 +55,12 @@
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnReport"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSetting_rpt1"
-        app:layout_constraintStart_toEndOf="@+id/btnbig_rpt1"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetting_rpt"
+        app:layout_constraintStart_toEndOf="@+id/btnbig_rpt"
         app:srcCompat="@drawable/btnreport" />
 
     <ImageView
-        android:id="@+id/btnSetting_rpt1"
+        android:id="@+id/btnSetting_rpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -68,7 +68,57 @@
         android:contentDescription="@string/btnSetting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnReport_rpt1"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_rpt"
         app:srcCompat="@drawable/btnsetting" />
+
+    <RadioGroup
+        android:id="@+id/radGroupR"
+        android:layout_width="350dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="#989696"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportTitle_rpt">
+
+        <RadioButton
+            android:id="@+id/radReport1"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:checked="true"
+            android:onClick="aMethodReport"
+            android:text="@string/radReport1"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/radReport2"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#1E88E5"
+            android:onClick="aMethodReport"
+            android:text="@string/radReport2"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/radReport3"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:onClick="aMethodReport"
+            android:text="@string/radReport3"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/radReport4"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#1E88E5"
+            android:onClick="aMethodReport"
+            android:text="@string/radReport4"
+            android:textSize="24sp" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

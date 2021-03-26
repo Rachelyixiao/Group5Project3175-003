@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,15 +35,12 @@ public class big1 extends AppCompatActivity {
         userdatabase = new UserDatabase(this);
 
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
-        String loginID = loginId.getString("loginId","");
-
-        int b_uid = Integer.parseInt(loginID);
-
 
         EditText inputCost = findViewById(R.id.txtGetInput_big);
         EditText bigdate = findViewById(R.id.txtBigDate);
         Spinner bigcateGroup = findViewById(R.id.spnBigCate);
         EditText bigDes = findViewById(R.id.txtBigDes);
+
 
         ImageView btnTracker_big = findViewById(R.id.btnTracker_big1);
         ImageView btnBig_big = findViewById(R.id.btnBig_big1);
@@ -58,23 +56,29 @@ public class big1 extends AppCompatActivity {
             public void onClick(View v) {
                 bigcost = Double.parseDouble(inputCost.getText().toString());
 
-                bigoutput.setText("Your big cost is "+bigcost);
+                //bigoutput.setText("Your big cost is "+bigcost);
 
                 bcate = bigcateGroup.getSelectedItem().toString();
                 bdate = bigdate.getText().toString();
                 bdes = bigDes.getText().toString();
 
+                int b_uid = Integer.parseInt(loginId.getString("loginId",""));
 
                 boolean isInserted = userdatabase.addBig(bdate,bcate,bdes,b_uid);
 
                 if(isInserted){
                     Toast.makeText(big1.this,"Big expense added",Toast.LENGTH_LONG).show();
                 }
-                else
-                    Toast.makeText(big1.this,"Big expenses not added",Toast.LENGTH_LONG).show();
+                else {
+                    Toast.makeText(big1.this, "Big expenses not added", Toast.LENGTH_LONG).show();
+                }
+
+                Intent i = new Intent(big1.this,big2.class);
+                i.putExtra("bigcost",bigcost);
+                startActivity(i);
 
 
-                startActivity(new Intent(big1.this, big2.class));
+
             }
         });
 

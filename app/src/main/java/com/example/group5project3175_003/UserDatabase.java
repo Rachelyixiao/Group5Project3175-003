@@ -134,7 +134,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put(T3COL_3,Desc);
         values.put(T3COL_4,b_uid);
 
-        long r = sqLiteDatabase.insert(TABLE2_NAME,null,values);
+        long r = sqLiteDatabase.insert(TABLE3_NAME,null,values);
         if(r>0)
             return  true;
         else
@@ -154,7 +154,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put(T2COL_7,t_desc);
         values.put(T2COL_8,t_uid);
 
-        long r = sqLiteDatabase.insert(TABLE3_NAME,null,values);
+        long r = sqLiteDatabase.insert(TABLE2_NAME,null,values);
         if(r>0)
             return  true;
         else
@@ -178,7 +178,7 @@ public class UserDatabase extends SQLiteOpenHelper {
 
     public boolean deleteUserData(int id){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        int d = sqLiteDatabase.delete(TABLE1_NAME,"id=?",new String[]{Integer.toString(id)});
+        int d = sqLiteDatabase.delete(TABLE1_NAME,"UID=?",new String[]{Integer.toString(id)});
         if(d>0)
             return true;
         else
@@ -188,7 +188,7 @@ public class UserDatabase extends SQLiteOpenHelper {
 
     public boolean deleteBig(int id){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        int d = sqLiteDatabase.delete(TABLE3_NAME,"id=?",new String[]{Integer.toString(id)});
+        int d = sqLiteDatabase.delete(TABLE3_NAME,"BID=?",new String[]{Integer.toString(id)});
         if(d>0)
             return true;
         else
@@ -197,7 +197,7 @@ public class UserDatabase extends SQLiteOpenHelper {
 
     public boolean deleteTranscation(int id){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        int d = sqLiteDatabase.delete(TABLE2_NAME,"id=?",new String[]{Integer.toString(id)});
+        int d = sqLiteDatabase.delete(TABLE2_NAME,"TID=?",new String[]{Integer.toString(id)});
         if(d>0)
             return true;
         else
@@ -242,7 +242,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put(T3COL_1,date);
         values.put(T3COL_2,cate);
         values.put(T3COL_3,des);
-        int d = sqLiteDatabase.update(TABLE3_NAME,values,"id=?",new String[]{Integer.toString(id)});
+        int d = sqLiteDatabase.update(TABLE3_NAME,values,"BID=?",new String[]{Integer.toString(id)});
         if(d>0)
             return true;
         else

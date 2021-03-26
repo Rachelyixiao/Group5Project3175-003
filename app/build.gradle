@@ -38,3 +38,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
+dependencies {
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:23.1.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'
+}

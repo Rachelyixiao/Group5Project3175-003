@@ -6,4 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".reportPage3">
 
+    <ImageView
+        android:id="@+id/reportTitle_rpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="37dp"
+        android:contentDescription="@string/reportTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reporttitle" />
+
+    <ImageView
+        android:id="@+id/btnTracker_rpt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnTracker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnbig_rpt3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btntracker" />
+
+    <ImageView
+        android:id="@+id/btnbig_rpt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnBig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_rpt3"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_rpt3"
+        app:srcCompat="@drawable/btnbig" />
+
+    <ImageView
+        android:id="@+id/btnReport_rpt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnReport"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetting_rpt3"
+        app:layout_constraintStart_toEndOf="@+id/btnbig_rpt3"
+        app:srcCompat="@drawable/btnreport" />
+
+    <ImageView
+        android:id="@+id/btnSetting_rpt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:contentDescription="@string/btnSetting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_rpt3"
+        app:srcCompat="@drawable/btnsetting" />
 </androidx.constraintlayout.widget.ConstraintLayout>

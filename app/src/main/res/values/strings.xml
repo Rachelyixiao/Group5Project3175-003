@@ -127,6 +127,9 @@
         <item>Others</item>
     </string-array>
     <string name="txtBigDes">Write some notes</string>
-
+    <string name="radReport1">Report Overview</string>
+    <string name="radReport2">Report of Fixed Spending</string>
+    <string name="radReport3">Money Breakdown for Events</string>
+    <string name="radReport4">History Report Search</string>
 
 </resources>
