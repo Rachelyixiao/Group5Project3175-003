@@ -131,5 +131,10 @@
     <string name="radReport2">Report of Fixed Spending</string>
     <string name="radReport3">Money Breakdown for Events</string>
     <string name="radReport4">History Report Search</string>
-
+    <string name="txtReportCustomize">Choose the date:</string>
+    <string name="txtReportStartDate">Enter start date</string>
+    <string name="txtReportEndDate">Enter end date</string>
+    <string name="btnReportCustomize">Submit</string>
+    <string name="txtMonthExpense">Your Expense:</string>
+    <string name="txtMonthSaving">Your Saving:</string>
 </resources>
