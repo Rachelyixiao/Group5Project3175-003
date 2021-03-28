@@ -2,12 +2,14 @@ package com.example.group5project3175_003;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -23,6 +25,7 @@ import java.util.Date;
 
 public class big1 extends AppCompatActivity {
     UserDatabase userdatabase;
+    DatePickerDialog datePickerDialog;
     double bigcost;
     String bdate;
     String bcate;
@@ -40,6 +43,28 @@ public class big1 extends AppCompatActivity {
         EditText bigdate = findViewById(R.id.txtBigDate);
         Spinner bigcateGroup = findViewById(R.id.spnBigCate);
         EditText bigDes = findViewById(R.id.txtBigDes);
+
+        bigdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                int bigyear = c.get(Calendar.YEAR);
+                int bigMonth = c.get(Calendar.MONTH);
+                int bigday = c.get(Calendar.DAY_OF_MONTH);
+
+                datePickerDialog = new DatePickerDialog(big1.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+                                // set day of month , month and year value in the edit text
+                                bigdate.setText(dayOfMonth + "/"
+                                        + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, bigyear, bigMonth, bigday);
+                datePickerDialog.show();
+            }
+        });
 
 
         ImageView btnTracker_big = findViewById(R.id.btnTracker_big1);

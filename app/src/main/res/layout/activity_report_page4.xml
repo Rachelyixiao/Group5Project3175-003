@@ -18,6 +18,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/reporttitle" />
 
+
+
+
+
+
+
+
+
     <ImageView
         android:id="@+id/btnTracker_rpt4"
         android:layout_width="wrap_content"
@@ -69,5 +77,84 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnReport_rpt4"
         app:srcCompat="@drawable/btnsetting" />
+
+    <TextView
+        android:id="@+id/txtReportC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginLeft="91dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginRight="90dp"
+        android:text="@string/txtReportCustomize"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportTitle_rpt" />
+
+
+    <Button
+        android:id="@+id/btnR4submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginRight="150dp"
+        android:text="@string/btnReportCustomize"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEdate" />
+
+    <TextView
+        android:id="@+id/textOutputR4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginLeft="177dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginRight="175dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnR4submit" />
+
+    <EditText
+        android:id="@+id/txtSDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
+        android:ems="10"
+        android:hint="@string/txtReportStartDate"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtReportC"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/txtEdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="98dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:ems="10"
+        android:hint="@string/txtReportEndDate"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSDate"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

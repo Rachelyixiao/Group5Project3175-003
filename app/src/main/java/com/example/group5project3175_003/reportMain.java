@@ -73,6 +73,7 @@ public class reportMain extends AppCompatActivity {
 
             case(R.id.radReport3):
                     startActivity(new Intent(reportMain.this,reportPage3.class));
+                    break;
 
             case(R.id.radReport4):
                     startActivity(new Intent(reportMain.this, reportPage4.class));
