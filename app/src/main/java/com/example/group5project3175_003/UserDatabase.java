@@ -10,10 +10,11 @@ import androidx.annotation.Nullable;
 
 
 import java.util.Date;
+import java.util.concurrent.Callable;
 
 public class UserDatabase extends SQLiteOpenHelper {
     final static String DATABASE_NAME = "Userinfor.db"; //database name
-    final static int DATABASE_VERSION = 1;              //database version
+    final static int DATABASE_VERSION = 2;              //database version
     final static String TABLE1_NAME = "Userinf";        //table 1 user table
     //User table columns name
     final static String T1COL_0 = "UID";
@@ -50,6 +51,32 @@ public class UserDatabase extends SQLiteOpenHelper {
     final static String T3COL_2 = "Category";
     final static String T3COL_3 = "Description";
     final static String T3COL_4 = "B_UID";
+
+    //table 4 daily expense table
+    final static String TABLE4_NAME = "DE";
+    final static String T4COL_0 ="DEid";
+    final static String T4COL_1 = "DEname";
+    final static String T4COL_2 = "DEDate";
+    final static String T4COL_3 = "DE_Category";
+    final static String T4COL_4 = "DE_amount";
+    final static String T4COL_5 = "DE_UID";
+
+
+    //Table 5 monthly bill table
+    final static String TABLE5_NAME = "MB";
+    final static String T5COL_0 = "BillID";
+    final static String T5COL_1 = "Billname";
+    final static String T5COL_2 = "BillDate";
+    final static String T5COL_3 = "BillAmount";
+    final static String T5COL_4 = "Bill_UID";
+
+    //Table 6 account table
+    final static String TABLE6_NAME = "Account";
+    final static String T6COL_0 = "ACC_ID";
+    final static String T6COL_1 = "AName";
+    final static String T6COL_2 = "AAmount";
+    final static String T6COL_3 = "A_UID";
+
 
 
     public UserDatabase(@Nullable Context context){
@@ -95,6 +122,35 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T3COL_4 +" INTEGER,"+
                 " FOREIGN KEY ("+T3COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
         db.execSQL(query3);
+
+
+        String query4 = "CREATE TABLE "+ TABLE4_NAME+"("+
+                T4COL_0 +" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                T4COL_1 +" TEXT,"+
+                T4COL_2 +" TEXT,"+
+                T4COL_3 +" TEXT,"+
+                T4COL_4 +" REAL,"+
+                T4COL_5 +" INTEGER,"+
+                " FOREIGN KEY ("+T4COL_5+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+        db.execSQL(query4);
+
+        String query5 = "CREATE TABLE "+ TABLE5_NAME+"("+
+                T5COL_0 +" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                T5COL_1 +" TEXT,"+
+                T5COL_2 +" TEXT,"+
+                T5COL_3 +" REAL,"+
+                T5COL_4 +" INTEGER,"+
+                " FOREIGN KEY ("+T5COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+        db.execSQL(query5);
+
+        String query6 = "CREATE TABLE "+ TABLE6_NAME+"("+
+                T6COL_0 +" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                T6COL_1 +" TEXT,"+
+                T6COL_2 +" REAL,"+
+                T6COL_3 +" INTEGER,"+
+                " FOREIGN KEY ("+T6COL_3+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+        db.execSQL(query6);
+
     }
 
 
@@ -103,6 +159,9 @@ public class UserDatabase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE1_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+TABLE2_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+TABLE3_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE4_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE5_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE6_NAME);
         onCreate(db);
     }
 
@@ -141,7 +200,59 @@ public class UserDatabase extends SQLiteOpenHelper {
             return  false;
     }
 
-    public boolean addTransaction(String type,String tcate,double amount,double balance,String fre,String t_date,String t_desc,int t_uid){
+    public boolean addEx(String n,String d,String c,double a,int id){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(T4COL_1,n);
+        values.put(T4COL_2,d);
+        values.put(T4COL_3,c);
+        values.put(T4COL_4,a);
+        values.put(T4COL_5,id);
+        long r = sqLiteDatabase.insert(TABLE4_NAME,null,values);
+        if(r>0)
+            return  true;
+        else
+            return  false;
+    }
+
+    public boolean addBill(String n,String d,double a,int id){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(T5COL_1,n);
+        values.put(T5COL_2,d);
+        values.put(T5COL_3,a);
+        values.put(T5COL_4,id);
+
+        long r = sqLiteDatabase.insert(TABLE5_NAME,null,values);
+        if(r>0)
+            return  true;
+        else
+            return  false;
+    }
+
+    public boolean addAccount(String n,double a,int id){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(T6COL_1, n);
+        values.put(T6COL_2,a);
+        values.put(T6COL_3,id);
+        long r = sqLiteDatabase.insert(TABLE6_NAME,null,values);
+        if(r>0)
+            return  true;
+        else
+            return  false;
+
+    }
+
+    public Cursor aggregateExpense(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT DE_UID,SUM(DE_amount) FROM "+TABLE4_NAME+
+                " GROUP BY DE_UID",null);
+        return c;
+    }
+
+
+ /*   public boolean addTransaction(String type,String tcate,double amount,double balance,String fre,String t_date,String t_desc,int t_uid){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -160,7 +271,9 @@ public class UserDatabase extends SQLiteOpenHelper {
         else
             return  false;
     }
+*/
 
+    //view data
     public Cursor viewData(){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         String query = "SELECT * FROM "+ TABLE1_NAME;
@@ -168,14 +281,35 @@ public class UserDatabase extends SQLiteOpenHelper {
         return c;
     }
 
+    public Cursor viewBig(int id){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE3_NAME +" WHERE B_UID = "+ id
+                + " AND FinishDate LIKE '2021/3%'",null);
+        return c;
+    }
 
+    public Cursor viewEx(int id){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE4_NAME +" WHERE DE_UID = "+ id
+                + " AND DEDate LIKE '2021/3%'",null);
+        return c;
+    }
+
+    public Cursor viewBill(int id){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE5_NAME+ " WHERE Bill_UID = "+id,null);
+        return  c;
+    }
+
+/*
     public Cursor viewCombineData(){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor c = sqLiteDatabase.rawQuery("SELECT UID,FName,LName,Account_Name,FinishDate " +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT FName,LName,Account_Name,FinishDate " +
                 "FROM Userinf INNER JOIN BigExpense ON Userinf.UID = BigExpense.B_UID",null);
         return c;
     }
 
+ */
     public boolean deleteUserData(int id){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         int d = sqLiteDatabase.delete(TABLE1_NAME,"UID=?",new String[]{Integer.toString(id)});

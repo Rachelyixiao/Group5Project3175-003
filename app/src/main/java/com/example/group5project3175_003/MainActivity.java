@@ -30,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.testBtn);
         TextView test = findViewById(R.id.test2);
 
+        Button btnGoTrans = findViewById(R.id.btnToTrans);
+
+
+        btnGoTrans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,transactionR.class));
+            }
+        });
+
+
         btnTracker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

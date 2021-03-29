@@ -137,4 +137,34 @@
     <string name="btnReportCustomize">Submit</string>
     <string name="txtMonthExpense">Your Expense:</string>
     <string name="txtMonthSaving">Your Saving:</string>
+    <string name="txtmoneybreakTitle">Money breakdown for events</string>
+    <string name="btnViewbig">View bigExpense</string>
+    <string name="btnTrace1">Monthly bills</string>
+    <string name="btnTrace2">Daily expenses</string>
+    <string name="titleTrace">Expense Tracker</string>
+
+    <string name="titleDailyExpense">Enter your expense below:</string>
+    <string name="txtexpensename">Enter name</string>
+    <string name="txtexpensedate">Enter date of expense</string>
+    <string name="txtexpenseam">Enter amount</string>
+    <string-array name="degroup">
+        <item>Grocery</item>
+        <item>Transportation</item>
+        <item>Health</item>
+        <item>Education</item>
+        <item>Beauty</item>
+        <item>Utility</item>
+        <item>Events</item>
+    </string-array>
+    <string name="btnexpenseadd">Add expense</string>
+    <string name="btnexpenseview">View expense</string>
+
+
+    <string name="titleBills">Enter your monthly bills below:</string>
+    <string name="txtbillname">Enter name</string>
+    <string name="txtbilldate">Enter due date of bill</string>
+    <string name="txtbillam">Enter amount</string>
+    <string name="btnbilladd">Add Bill</string>
+    <string name="btnbillview">View Bill</string>
+
 </resources>

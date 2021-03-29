@@ -12,9 +12,9 @@
         android:id="@+id/bigexpensetitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="56dp"
         android:contentDescription="@string/bigexpensetitle1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -70,14 +70,15 @@
         app:srcCompat="@drawable/btnsetting" />
 
     <ImageView
-        android:id="@+id/btnSubmit_big"
+        android:id="@+id/btnadd_big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/btnSubmit"
-        app:layout_constraintBottom_toTopOf="@+id/btnReport_big1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBigDes"
         app:srcCompat="@drawable/btnsubmit" />
 
     <EditText
@@ -86,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="53dp"
         android:layout_marginLeft="53dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:autofillHints=""
@@ -95,23 +96,9 @@
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bigexpensetitle1" />
-
-    <TextView
-        android:id="@+id/txtBigOuttest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
-        android:layout_marginLeft="177dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginEnd="234dp"
-        android:layout_marginRight="234dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spnBigCate"
@@ -131,9 +118,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="53dp"
         android:layout_marginLeft="53dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txtBigDes"
         android:inputType="textPersonName"
@@ -141,8 +129,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnBigCate"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/spnBigCate" />
 
     <EditText
         android:id="@+id/txtBigDate"
@@ -155,12 +142,41 @@
         android:layout_marginRight="78dp"
         android:ems="10"
         android:hint="@string/txtbigdate"
-        android:inputType="textPersonName"
+        android:inputType="date"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtGetInput_big"
         android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btnViewBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginRight="252dp"
+        android:text="@string/btnViewbig"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnadd_big" />
+
+    <TextView
+        android:id="@+id/txtBigOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnViewBig"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
