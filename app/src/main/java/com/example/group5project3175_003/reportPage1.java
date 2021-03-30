@@ -3,21 +3,12 @@ package com.example.group5project3175_003;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
-
-import java.util.ArrayList;
 
 public class reportPage1 extends AppCompatActivity {
 
@@ -26,21 +17,28 @@ public class reportPage1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_page1);
 
+        TextView userFullname= findViewById(R.id.txtUname);
         TextView monthSaving = findViewById(R.id.txtMonthSavingOutput);
-        TextView monthExpense = findViewById(R.id.txtMonthExOutput);
+        TextView monthIncomeBalance = findViewById(R.id.txtMonthInOutput);
+       // TextView monthExpense = findViewById(R.id.txtMonthExOutput);
 
+        SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+        String loginID = loginId.getString("loginId","");
+        UserDatabase userdatabase = new UserDatabase(this);
 
+        int positionId = Integer.parseInt(loginID)-1;
+        Cursor c = userdatabase.viewData();
+        c.moveToPosition(positionId);
 
-        monthSaving.setText("You expense of ");
-        monthExpense.setText("Your saving of ");
+        String userFName = c.getString(1);
+        String userLname = c.getString(2);
+        double userIncome = c.getDouble(8);
+        double UserSaving = c.getDouble(9);
 
-
-
-
-
-
-
-
+        userFullname.setText("Hello! "+userFName +" "+userLname);
+        monthIncomeBalance.setText("You income balance is :"+userIncome);
+        monthSaving.setText("Your saving is :"+UserSaving);
+        //monthExpense.setText("Your expense is "+ )
 
 
         ImageView btnTracker_rpt1 = findViewById(R.id.btnTracker_rpt1);

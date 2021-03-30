@@ -167,4 +167,8 @@
     <string name="btnbilladd">Add Bill</string>
     <string name="btnbillview">View Bill</string>
 
+    <string name="mainIncome">Balance:</string>
+    <string name="mainSaving">Saving:</string>
+    <string name="mainDailyExAllowed">Daily Expense Allowed:</string>
+
 </resources>

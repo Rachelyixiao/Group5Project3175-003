@@ -33,14 +33,23 @@ public class big1 extends AppCompatActivity {
         setContentView(R.layout.activity_big_expense_page1);
 
         userdatabase = new UserDatabase(this);
-
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+        String loginID = loginId.getString("loginId","");
+
 
         EditText inputCost = findViewById(R.id.txtGetInput_big);
         EditText bigdate = findViewById(R.id.txtBigDate);
         Spinner bigcateGroup = findViewById(R.id.spnBigCate);
         EditText bigDes = findViewById(R.id.txtBigDes);
 
+        int positionId = Integer.parseInt(loginID)-1;
+        Cursor c = userdatabase.viewData();
+        c.moveToPosition(positionId);
+        double userIncome = c.getDouble(8);
+        double UserSaving = c.getDouble(9);
+        double TotalBalance = userIncome+UserSaving;
+
+        //The user can choose the big expense date
         bigdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,10 +75,10 @@ public class big1 extends AppCompatActivity {
 
 
         int b_uid = Integer.parseInt(loginId.getString("loginId",""));
-
         ImageView btnSubmit_big = findViewById(R.id.btnadd_big);
 
         //Get the user input and insert data into bigexpense table
+        //Give the user some suggestions based on his/her balance
         btnSubmit_big.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +89,22 @@ public class big1 extends AppCompatActivity {
                 bdate = bigdate.getText().toString();
                 bdes = bigDes.getText().toString();
 
+                if(bigcost>TotalBalance){
+                    Intent i = new Intent(big1.this,big2.class);
+                    i.putExtra("bigcost",bigcost);
+                    i.putExtra("totalBalance",TotalBalance);
+                    i.putExtra("balance",userIncome);
+                    i.putExtra("saving",UserSaving);
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(big1.this,big3.class);
+                    i.putExtra("bigcost",bigcost);
+                    i.putExtra("balance",userIncome);
+                    i.putExtra("saving",UserSaving);
+                    startActivity(i);
+                }
+
                 boolean isInserted = userdatabase.addBig(bdate,bcate,bdes,b_uid);
 
                 if(isInserted){
@@ -89,13 +114,10 @@ public class big1 extends AppCompatActivity {
                     Toast.makeText(big1.this, "Big expenses not added", Toast.LENGTH_LONG).show();
                 }
 
-            /*    Intent i = new Intent(big1.this,big2.class);
-                i.putExtra("bigcost",bigcost);
-                startActivity(i);
-            */
             }
         });
 
+        //View the result of big expense
         Button btnViewbig = findViewById(R.id.btnViewBig);
         TextView bigout = findViewById(R.id.txtBigOut);
 
