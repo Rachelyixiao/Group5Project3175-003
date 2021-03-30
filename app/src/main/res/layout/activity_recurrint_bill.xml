@@ -115,4 +115,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/btnTracker_rb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnTracker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnbig_rb1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btntracker" />
+
+    <ImageView
+        android:id="@+id/btnbig_rb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnBig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_rb1"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_rb1"
+        app:srcCompat="@drawable/btnbig" />
+
+    <ImageView
+        android:id="@+id/btnReport_rb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/btnReport"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetting_rb1"
+        app:layout_constraintStart_toEndOf="@+id/btnbig_rb1"
+        app:srcCompat="@drawable/btnreport" />
+
+    <ImageView
+        android:id="@+id/btnSetting_rb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:contentDescription="@string/btnSetting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_rb1"
+        app:srcCompat="@drawable/btnsetting" />
 </androidx.constraintlayout.widget.ConstraintLayout>
