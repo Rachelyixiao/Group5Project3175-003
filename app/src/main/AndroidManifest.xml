@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Group5Project3175003">
-        <activity android:name=".DailyExpense"></activity>
+        <activity android:name=".big3"></activity>
+        <activity android:name=".DailyExpense" />
         <activity android:name=".RecurrintBill" />
         <activity android:name=".transactionR" />
         <activity android:name=".reportPage4" />

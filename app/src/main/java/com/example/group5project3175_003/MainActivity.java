@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+        String loginID = loginId.getString("loginId","");
         UserDatabase userdatabase = new UserDatabase(this);
+
         ImageView btnTracker = findViewById(R.id.btnTracker);
         ImageView btnBig = findViewById(R.id.btnBig);
         ImageView btnReport = findViewById(R.id.btnReport);
@@ -30,7 +32,21 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.testBtn);
         TextView test = findViewById(R.id.test2);
 
+        int positionId = Integer.parseInt(loginID)-1;
+        Cursor c = userdatabase.viewData();
+        c.moveToPosition(positionId);
+
+        double userIncome = c.getDouble(8);
+        double UserSaving = c.getDouble(9);
+
         Button btnGoTrans = findViewById(R.id.btnToTrans);
+
+        TextView balance = findViewById(R.id.mainbalance);
+        TextView saving = findViewById(R.id.mainsaving);
+      //  TextView mainDEallow = findViewById(R.id.maindeallow);
+
+        balance.setText(Double.toString(userIncome));
+        saving.setText(Double.toString(UserSaving));
 
 
         btnGoTrans.setOnClickListener(new View.OnClickListener() {
@@ -77,10 +93,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-    button.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            String userId = loginId.getString("loginId","");
+//    button.setOnClickListener(new View.OnClickListener() {
+   //     @Override
+   //     public void onClick(View v) {
+  //          test.setText("I:"+userIncome+"S:"+UserSaving);
+
+
+
+            //            String userId = loginId.getString("loginId","");
 
      /*       SQLiteDatabase db = userdatabase.getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -97,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             test.setText(c.getString(7));
 
       */
-            int loginid = Integer.parseInt(userId);
+//            int loginid = Integer.parseInt(userId);
    /*         String fn = "222";
             String ln="333";
             String email = "eeeeee";
@@ -110,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Record not Updated",Toast.LENGTH_LONG).show();
 
 */
-        }
-    });
+
+
     }
 }

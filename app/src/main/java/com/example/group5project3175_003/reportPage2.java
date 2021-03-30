@@ -3,6 +3,8 @@ package com.example.group5project3175_003;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -16,13 +18,35 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class reportPage2 extends AppCompatActivity {
     private PieChart pieChart;
+    UserDatabase userdatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_page2);
+
+        userdatabase = new UserDatabase(this);
+        SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+        String loginID = loginId.getString("loginId","");
+        int useId = Integer.parseInt(loginId.getString("loginId",""));
+    //    int positionId = Integer.parseInt(loginID)-1;
+
+        //     exOutput.setText(stringBuilder);
+
+        Cursor c = userdatabase.viewBill(useId);
+        ArrayList<String> billName = new ArrayList<>();
+        ArrayList<Double> billAmount = new ArrayList<>();
+        while(c.moveToNext()){
+            billName.add(c.getString(1));
+            billAmount.add(c.getDouble(3));
+        }
+
+
+
 
         pieChart= (PieChart) findViewById(R.id.report_pie_chart);
         pieChart.setUsePercentValues(true);
@@ -58,6 +82,9 @@ public class reportPage2 extends AppCompatActivity {
         // pieChart.setOnChartValueSelectedListener(this);
         pieChart.animateY(3400, Easing.EasingOption.EaseInQuad);
         ArrayList<PieEntry> pieEntries = new ArrayList<PieEntry>();
+
+
+
         pieEntries.add( new PieEntry(24,"Income"));//can change the value and label
         pieEntries.add( new PieEntry(25,"Expense"));
         pieEntries.add( new PieEntry(28,"Saving"));
@@ -90,19 +117,7 @@ public class reportPage2 extends AppCompatActivity {
         pieChart.highlightValues(null);
         pieChart.invalidate();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //botton navigator
         ImageView btnTracker_rpt2 = findViewById(R.id.btnTracker_rpt2);
         ImageView btnbig_rpt2 = findViewById(R.id.btnbig_rpt2);
         ImageView btnReport_rpt2 = findViewById(R.id.btnReport_rpt2);

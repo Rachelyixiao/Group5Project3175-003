@@ -41,9 +41,10 @@ public class NewUser3 extends AppCompatActivity {
 //                String language = user.getString("language","");
                 String alarm = user.getString("alarm","");
 //                String theme = user.getString("theme","");
-                int sSalary = Integer.parseInt(salary.getText().toString());
-                int sAdIncome = Integer.parseInt(adIncome.getText().toString());
-                int sSaving = Integer.parseInt(saving.getText().toString());
+                double sSalary = Integer.parseInt(salary.getText().toString());
+                double sAdIncome = Integer.parseInt(adIncome.getText().toString());
+                double sIncome = sSalary+sAdIncome;
+                double sSaving = Integer.parseInt(saving.getText().toString());
 
 
                 isInserted = userDatabase.add(fName,
@@ -53,8 +54,7 @@ public class NewUser3 extends AppCompatActivity {
                         currency,
                         alarm,
                         sacName,
-                        sSalary,
-                        sAdIncome,
+                        sIncome,
                         sSaving);
                     if (isInserted){
                         Toast.makeText(NewUser3.this,"Data added",Toast.LENGTH_LONG).show();

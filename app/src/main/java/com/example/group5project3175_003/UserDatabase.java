@@ -14,7 +14,8 @@ import java.util.concurrent.Callable;
 
 public class UserDatabase extends SQLiteOpenHelper {
     final static String DATABASE_NAME = "Userinfor.db"; //database name
-    final static int DATABASE_VERSION = 2;              //database version
+    final static int DATABASE_VERSION = 3;              //database version
+
     final static String TABLE1_NAME = "Userinf";        //table 1 user table
     //User table columns name
     final static String T1COL_0 = "UID";
@@ -27,22 +28,9 @@ public class UserDatabase extends SQLiteOpenHelper {
     final static String T1COL_6 = "Alarm";
     //    final static String T1COL_7 = "Dark_mode";
     final static String T1COL_7 = "Account_Name";
-    final static String T1COL_8 = "Salary";
-    final static String T1COL_9 = "Additional_Income";
-    final static String T1COL_10 = "Saving";
-
-
-    final static String TABLE2_NAME = "TransactionTable";  // table 2 transaction table
-    //Transaction table columns name
-    final static String T2COL_0 = "TID";
-    final static String T2COL_1 = "Type";
-    final static String T2COL_2 = "T_Category";
-    final static String T2COL_3 = "Amount";
-    final static String T2COL_4 = "Balance";
-    final static String T2COL_5 = "Frequency";
-    final static String T2COL_6 = "Date";
-    final static String T2COL_7 = "Description";
-    final static String T2COL_8 = "T_UID";
+    final static String T1COL_8 = "TotalIncome";
+  //  final static String T1COL_9 = "Additional_Income";
+    final static String T1COL_9 = "Saving";
 
 
     final static String TABLE3_NAME = "BigExpense";  // table 3 big expense table
@@ -96,23 +84,11 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T1COL_5 + " TEXT,"+
                 T1COL_6 + " TEXT,"+
                 T1COL_7 + " TEXT,"+
-                T1COL_8 + " INTERGER,"+
-                T1COL_9 + " INTERGER,"+
-                T1COL_10 + " INTERGER)";
+                T1COL_8 + " REAL,"+//CHANGE TYPE TO REAL
+        //        T1COL_9 + " INTERGER,"+//去掉//CHANGE TYPE TO REAL
+                T1COL_9 + " REAL)";//CHANGE TYPE TO REAL
         db.execSQL(query1);
 
-        String query2 = "CREATE TABLE "+ TABLE2_NAME + "("+
-                T2COL_0 + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                T2COL_1 + " TEXT,"+
-                T2COL_2 + " TEXT,"+
-                T2COL_3 + " REAL NOT NULL,"+
-                T2COL_4 + " REAL,"+
-                T2COL_5 + " TEXT,"+
-                T2COL_6 + " TEXT,"+
-                T2COL_7 + " TEXT,"+
-                T2COL_8 + " INTEGER,"+
-                " FOREIGN KEY ("+T2COL_8+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
-        db.execSQL(query2);
 
         String query3 = "CREATE TABLE "+ TABLE3_NAME+"("+
                 T3COL_0 +" INTEGER PRIMARY KEY AUTOINCREMENT,"+
@@ -130,8 +106,8 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T4COL_2 +" TEXT,"+
                 T4COL_3 +" TEXT,"+
                 T4COL_4 +" REAL,"+
-                T4COL_5 +" INTEGER,"+
-                " FOREIGN KEY ("+T4COL_5+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+                T4COL_5 +" INTEGER)";
+               // " FOREIGN KEY ("+T4COL_5+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
         db.execSQL(query4);
 
         String query5 = "CREATE TABLE "+ TABLE5_NAME+"("+
@@ -139,16 +115,16 @@ public class UserDatabase extends SQLiteOpenHelper {
                 T5COL_1 +" TEXT,"+
                 T5COL_2 +" TEXT,"+
                 T5COL_3 +" REAL,"+
-                T5COL_4 +" INTEGER,"+
-                " FOREIGN KEY ("+T5COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+                T5COL_4 +" INTEGER)";
+            //    " FOREIGN KEY ("+T5COL_4+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
         db.execSQL(query5);
 
         String query6 = "CREATE TABLE "+ TABLE6_NAME+"("+
                 T6COL_0 +" INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 T6COL_1 +" TEXT,"+
                 T6COL_2 +" REAL,"+
-                T6COL_3 +" INTEGER,"+
-                " FOREIGN KEY ("+T6COL_3+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
+                T6COL_3 +" INTEGER)";
+           //     " FOREIGN KEY ("+T6COL_3+") REFERENCES "+TABLE1_NAME+"("+T1COL_0+"));";
         db.execSQL(query6);
 
     }
@@ -157,7 +133,7 @@ public class UserDatabase extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE1_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE2_NAME);
+        //db.execSQL("DROP TABLE IF EXISTS "+TABLE2_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+TABLE3_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+TABLE4_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+TABLE5_NAME);
@@ -166,7 +142,7 @@ public class UserDatabase extends SQLiteOpenHelper {
     }
 
     public boolean add(String fn,String ln,String email, String psw,String curr,String ala,
-                       String acname,int Salary,int Additional_Income,int Saving){
+                       String acname,double Income,double Saving){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(T1COL_1,fn);
@@ -176,9 +152,9 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put(T1COL_5,curr);
         values.put(T1COL_6,ala);
         values.put(T1COL_7,acname);
-        values.put(T1COL_8,Salary);
-        values.put(T1COL_9,Additional_Income);
-        values.put(T1COL_10,Saving);
+        values.put(T1COL_8,Income);
+        //values.put(T1COL_9,Additional_Income);//去掉
+        values.put(T1COL_9,Saving);
 
         long r = sqLiteDatabase.insert(TABLE1_NAME, null, values);
         return r>0;
@@ -244,34 +220,14 @@ public class UserDatabase extends SQLiteOpenHelper {
 
     }
 
+    //calculate expense of each user
     public Cursor aggregateExpense(){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         Cursor c = sqLiteDatabase.rawQuery("SELECT DE_UID,SUM(DE_amount) FROM "+TABLE4_NAME+
-                " GROUP BY DE_UID",null);
+               " GROUP BY DE_UID",null);
         return c;
     }
 
-
- /*   public boolean addTransaction(String type,String tcate,double amount,double balance,String fre,String t_date,String t_desc,int t_uid){
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        values.put(T2COL_1,type);
-        values.put(T2COL_2,tcate);
-        values.put(T2COL_3,amount);
-        values.put(T2COL_4,balance);
-        values.put(T2COL_5,fre);
-        values.put(T2COL_6,t_date);
-        values.put(T2COL_7,t_desc);
-        values.put(T2COL_8,t_uid);
-
-        long r = sqLiteDatabase.insert(TABLE2_NAME,null,values);
-        if(r>0)
-            return  true;
-        else
-            return  false;
-    }
-*/
 
     //view data
     public Cursor viewData(){
@@ -283,15 +239,15 @@ public class UserDatabase extends SQLiteOpenHelper {
 
     public Cursor viewBig(int id){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE3_NAME +" WHERE B_UID = "+ id
-                + " AND FinishDate LIKE '2021/3%'",null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE3_NAME +" WHERE B_UID = "+ id,null);
+           //     + " AND FinishDate LIKE '2021/3%'",null);
         return c;
     }
 
     public Cursor viewEx(int id){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE4_NAME +" WHERE DE_UID = "+ id
-                + " AND DEDate LIKE '2021/3%'",null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE4_NAME +" WHERE DE_UID = "+ id,null);
+               // + " AND DEDate LIKE '2021/3%'",null);
         return c;
     }
 
@@ -308,8 +264,8 @@ public class UserDatabase extends SQLiteOpenHelper {
                 "FROM Userinf INNER JOIN BigExpense ON Userinf.UID = BigExpense.B_UID",null);
         return c;
     }
-
  */
+
     public boolean deleteUserData(int id){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         int d = sqLiteDatabase.delete(TABLE1_NAME,"UID=?",new String[]{Integer.toString(id)});
@@ -329,13 +285,22 @@ public class UserDatabase extends SQLiteOpenHelper {
             return false;
     }
 
-    public boolean deleteTranscation(int id){
+    //Update income(balance)
+    public boolean updateUserData(String loginID,double Income){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        int d = sqLiteDatabase.delete(TABLE2_NAME,"TID=?",new String[]{Integer.toString(id)});
-        if(d>0)
-            return true;
-        else
-            return false;
+        ContentValues values= new ContentValues();
+        values.put(T1COL_8, Income);
+        int d =sqLiteDatabase.update("Userinf",values,"UID=?",new String[]{loginID});
+        return d>0;
+    }
+
+    //update saving
+    public boolean updateUserSavingData(String loginID,double saving){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(T1COL_9,saving);
+        int d =sqLiteDatabase.update("Userinf",values,"UID=?",new String[]{loginID});
+        return d>0;
     }
 
     public boolean updateUserData(String loginID,String sAcName,String sFName,String sLName,String sEmail,String sPsw,String setAlarm){
@@ -364,10 +329,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         }
         int d =sqLiteDatabase.update("Userinf",values,"UID=?",new String[]{loginID});
 
-
             return d>0;
-
-
     }
 
     public  boolean updateBigDate(int id,String date,String cate,String des){

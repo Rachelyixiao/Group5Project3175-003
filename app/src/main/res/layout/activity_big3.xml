@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/subbg"
-    tools:context=".big2">
+    tools:context=".big3">
 
     <ImageView
         android:id="@+id/bigexpensetitle2"
@@ -19,9 +18,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bigtitle1" />
 
+    <TextView
+        android:id="@+id/bigcostResult2"
+        android:layout_width="279dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bigexpensetitle2" />
 
     <ImageView
-        android:id="@+id/btnTracker_big2"
+        android:id="@+id/btnTracker_big3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/btnTracker"
@@ -30,7 +42,7 @@
         app:srcCompat="@drawable/btntracker" />
 
     <ImageView
-        android:id="@+id/btnBig_big2"
+        android:id="@+id/btnBig_big3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -39,12 +51,12 @@
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnBig"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnReport_big2"
-        app:layout_constraintStart_toEndOf="@+id/btnTracker_big2"
+        app:layout_constraintEnd_toStartOf="@+id/btnReport_big3"
+        app:layout_constraintStart_toEndOf="@+id/btnTracker_big3"
         app:srcCompat="@drawable/btnbig" />
 
     <ImageView
-        android:id="@+id/btnReport_big2"
+        android:id="@+id/btnReport_big3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -53,12 +65,12 @@
         android:layout_marginRight="3dp"
         android:contentDescription="@string/btnReport"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSetting_big2"
-        app:layout_constraintStart_toEndOf="@+id/btnBig_big2"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetting_big3"
+        app:layout_constraintStart_toEndOf="@+id/btnBig_big3"
         app:srcCompat="@drawable/btnreport" />
 
     <ImageView
-        android:id="@+id/btnSetting_big2"
+        android:id="@+id/btnSetting_big3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -66,21 +78,8 @@
         android:contentDescription="@string/btnSetting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnReport_big2"
+        app:layout_constraintStart_toEndOf="@+id/btnReport_big3"
         app:srcCompat="@drawable/btnsetting" />
 
-    <TextView
-        android:id="@+id/bigcostResult1"
-        android:layout_width="292dp"
-        android:layout_height="198dp"
-        android:layout_marginStart="63dp"
-        android:layout_marginLeft="63dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bigexpensetitle2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

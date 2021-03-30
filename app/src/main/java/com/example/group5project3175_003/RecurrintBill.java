@@ -30,6 +30,7 @@ public class RecurrintBill extends AppCompatActivity {
 
         userdatabase = new UserDatabase(this);
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+        String loginID = loginId.getString("loginId","");
 
         EditText bName = findViewById(R.id.txtBillName);
         EditText bDate = findViewById(R.id.txtBilldate);
@@ -71,9 +72,18 @@ public class RecurrintBill extends AppCompatActivity {
                 billDate = bDate.getText().toString();
                 billAmount= Double.parseDouble(bAmount.getText().toString());
 
+                int positionId = Integer.parseInt(loginID)-1;
+                Cursor c = userdatabase.viewData();
+                c.moveToPosition(positionId);
+               // double UserIncome=c.getInt(8);
+               // double UserAddIncome=c.getInt(9);
+               double UserTotalIncome = c.getDouble(8);
+
+
                 isInserted = userdatabase.addBill(billName,billDate,billAmount,MB_UID);
                 if(isInserted){
                     Toast.makeText(RecurrintBill.this,"Monthly bill added",Toast.LENGTH_LONG).show();
+                    userdatabase.updateUserData(loginId.getString("loginId",""),(UserTotalIncome-billAmount));
                 }
                 else {
                     Toast.makeText(RecurrintBill.this, "Monthly bill not added", Toast.LENGTH_LONG).show();
