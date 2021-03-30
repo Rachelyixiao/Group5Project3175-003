@@ -3,6 +3,7 @@ package com.example.group5project3175_003;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -111,7 +113,40 @@ public class RecurrintBill extends AppCompatActivity {
 
 
 
+        ImageView btnTracker_RB1 = findViewById(R.id.btnTracker_rb1);
+        ImageView btnbig_RB1 = findViewById(R.id.btnbig_rb1);
+        ImageView btnReport_RB1 = findViewById(R.id.btnReport_rb1);
+        ImageView btnSetting_RB1 = findViewById(R.id.btnSetting_rb1);
 
+
+
+        btnTracker_RB1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RecurrintBill.this, MainActivity.class));
+            }
+        });
+
+        btnbig_RB1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RecurrintBill.this, big1.class));
+            }
+        });
+
+        btnReport_RB1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RecurrintBill.this, reportMain.class));
+            }
+        });
+
+        btnSetting_RB1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RecurrintBill.this, SettingPage1.class));
+            }
+        });
 
 
 
