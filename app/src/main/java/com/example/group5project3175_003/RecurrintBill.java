@@ -33,6 +33,7 @@ public class RecurrintBill extends AppCompatActivity {
         userdatabase = new UserDatabase(this);
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
         String loginID = loginId.getString("loginId","");
+        Cursor Userinf = userdatabase.viewUserData(loginID);
 
         EditText bName = findViewById(R.id.txtBillName);
         EditText bDate = findViewById(R.id.txtBilldate);
@@ -79,13 +80,16 @@ public class RecurrintBill extends AppCompatActivity {
                 c.moveToPosition(positionId);
                // double UserIncome=c.getInt(8);
                // double UserAddIncome=c.getInt(9);
-               double UserTotalIncome = c.getDouble(8);
+                double userInitialBalance = c.getDouble(10);
+                double dailyAllow = c.getDouble(11);
 
+                double newdailyAllow = dailyAllow - billAmount;
 
                 isInserted = userdatabase.addBill(billName,billDate,billAmount,MB_UID);
                 if(isInserted){
                     Toast.makeText(RecurrintBill.this,"Monthly bill added",Toast.LENGTH_LONG).show();
-                    userdatabase.updateUserData(loginId.getString("loginId",""),(UserTotalIncome-billAmount));
+                    userdatabase.updateUserData(loginId.getString("loginId",""),(userInitialBalance-billAmount));
+                    userdatabase.updateDailyAllow(Integer.parseInt(loginID),newdailyAllow);
                 }
                 else {
                     Toast.makeText(RecurrintBill.this, "Monthly bill not added", Toast.LENGTH_LONG).show();
@@ -99,13 +103,13 @@ public class RecurrintBill extends AppCompatActivity {
         btnViewBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Cursor c = userdatabase.viewBill(MB_UID);
+                Cursor c = userdatabase.viewBill(Integer.parseInt(loginID));
                 StringBuilder stringBuilder = new StringBuilder();
                 while(c.moveToNext()){
-                    stringBuilder.append("\nDE_ID :"+c.getInt(0)+
-                            " Name :"+c.getString(1)+
+                    stringBuilder.append(
+                            " Bill name :"+c.getString(1)+
                             " Date :"+c.getString(2)+
-                            " Amount :"+c.getString(3));
+                            "Bill AMOUNT :"+c.getDouble(3));
                 }
                 Output.setText(stringBuilder);
             }

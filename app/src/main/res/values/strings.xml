@@ -117,7 +117,7 @@
     <string name="txtSettingChangeAcName">Input your Account Name</string>
     <string name="btnTestCheck">Check</string>
     <string name="btnTestAdd">Back to register</string>
-    <string name="txtbigdate">Input the due date</string>
+    <string name="txtbigdate">Double Click to choose the due date</string>
     <string-array name="bigCategory">
         <item>Gift</item>
         <item>Travel</item>
@@ -132,8 +132,8 @@
     <string name="radReport3">Money Breakdown for Events</string>
     <string name="radReport4">History Report Search</string>
     <string name="txtReportCustomize">Choose the date:</string>
-    <string name="txtReportStartDate">Enter start date</string>
-    <string name="txtReportEndDate">Enter end date</string>
+    <string name="txtReportStartDate">Double Click to choose start date</string>
+    <string name="txtReportEndDate">Double Click to choose end date</string>
     <string name="btnReportCustomize">Submit</string>
     <string name="txtMonthExpense">Your Expense:</string>
     <string name="txtMonthSaving">Your Saving:</string>
@@ -143,9 +143,10 @@
     <string name="btnTrace2">Daily expenses</string>
     <string name="titleTrace">Expense Tracker</string>
 
-    <string name="titleDailyExpense">Enter your expense below:</string>
+    <string name="titleDailyExpense">Enter your daily expense below:</string>
+    <string name="titleDailyExpense2">Please enter once perday</string>
     <string name="txtexpensename">Enter name</string>
-    <string name="txtexpensedate">Enter date of expense</string>
+    <string name="txtexpensedate">Double Click to choose date of expense</string>
     <string name="txtexpenseam">Enter amount</string>
     <string-array name="degroup">
         <item>Grocery</item>
@@ -162,7 +163,7 @@
 
     <string name="titleBills">Enter your monthly bills below:</string>
     <string name="txtbillname">Enter name</string>
-    <string name="txtbilldate">Enter due date of bill</string>
+    <string name="txtbilldate">Double Click to choose due date</string>
     <string name="txtbillam">Enter amount</string>
     <string name="btnbilladd">Add Bill</string>
     <string name="btnbillview">View Bill</string>
@@ -170,5 +171,7 @@
     <string name="mainIncome">Balance:</string>
     <string name="mainSaving">Saving:</string>
     <string name="mainDailyExAllowed">Daily Expense Allowed:</string>
+    <string name="settleEX">SETTLE</string>
+    <string name="btnlogin">login</string>
 
 </resources>

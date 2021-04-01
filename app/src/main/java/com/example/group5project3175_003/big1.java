@@ -45,7 +45,7 @@ public class big1 extends AppCompatActivity {
         int positionId = Integer.parseInt(loginID)-1;
         Cursor c = userdatabase.viewData();
         c.moveToPosition(positionId);
-        double userIncome = c.getDouble(8);
+        double userIncome = c.getDouble(10);
         double UserSaving = c.getDouble(9);
         double TotalBalance = userIncome+UserSaving;
 

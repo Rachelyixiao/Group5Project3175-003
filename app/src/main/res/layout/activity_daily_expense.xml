@@ -6,19 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".DailyExpense">
 
+
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="105dp"
         android:layout_marginRight="105dp"
         android:text="@string/titleDailyExpense"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,16 +29,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="101dp"
         android:layout_marginRight="101dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txtexpensename"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <EditText
         android:id="@+id/txtExDate"
@@ -101,17 +103,19 @@
         app:layout_constraintStart_toEndOf="@+id/btnEadd"
         app:layout_constraintTop_toBottomOf="@+id/txtEAmount" />
 
+
     <Spinner
         android:id="@+id/expenseGroup"
         android:layout_width="280dp"
         android:layout_height="34dp"
         android:layout_marginStart="69dp"
         android:layout_marginLeft="69dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="62dp"
         android:layout_marginRight="62dp"
         android:entries="@array/degroup"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtExDate" />
 
@@ -119,27 +123,12 @@
         android:id="@+id/exOut"
         android:layout_width="0dp"
         android:layout_height="109dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="47dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEAmount" />
-
-    <Button
-        android:id="@+id/btnCalTotalExpense"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="283dp"
-        android:layout_marginRight="283dp"
-        android:text="CAL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEadd" />
-
 
     <ImageView
         android:id="@+id/btnTracker_ex1"
@@ -192,4 +181,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnReport_ex1"
         app:srcCompat="@drawable/btnsetting" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginRight="77dp"
+        android:text="@string/titleDailyExpense2"
+        android:textColor="#F4511E"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

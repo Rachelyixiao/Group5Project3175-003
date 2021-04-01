@@ -18,14 +18,13 @@ import java.util.List;
 
 public class SettingPage1 extends AppCompatActivity {
     String[] settings = {"Modify User Info","Check User Account Info","PRIVACY POLICY","LOG OUT"};
-    int[] settingImages = {R.drawable.settingprofile,R.drawable.account1,
-            R.drawable.settingprivacy,R.drawable.settinglogout};
+    int[] settingImages = {R.drawable.btnsetting111,R.drawable.btnsetting222,
+            R.drawable.btnsetting333,R.drawable.btnsetting444};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_page1);
-
 
 
         java.util.List<HashMap<String,String>> aListSetting = new ArrayList<>();
@@ -67,6 +66,7 @@ public class SettingPage1 extends AppCompatActivity {
             }
         });
 
+        //bottom navigator
         ImageView btnTracker_set1 = findViewById(R.id.btnTracker_set1);
         ImageView btnBig_set1 = findViewById(R.id.btnBig_set1);
         ImageView btnReport_set1 = findViewById(R.id.btnReport_set1);

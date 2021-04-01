@@ -15,33 +15,33 @@ public class SettingPage3 extends AppCompatActivity {
         setContentView(R.layout.activity_setting_page3);
 
 
-        ImageView btnTracker_set1 = findViewById(R.id.btnTracker_set2);
-        ImageView btnBig_set1 = findViewById(R.id.btnBig_set2);
-        ImageView btnReport_set1 = findViewById(R.id.btnReport_set2);
-        ImageView btnSetting_set1 = findViewById(R.id.btnSetting_set2);
+        ImageView btnTracker_set3 = findViewById(R.id.btnTracker_set3);
+        ImageView btnBig_set3 = findViewById(R.id.btnBig_set3);
+        ImageView btnReport_set3 = findViewById(R.id.btnReport_set3);
+        ImageView btnSetting_set3 = findViewById(R.id.btnSetting_set3);
 
-        btnTracker_set1.setOnClickListener(new View.OnClickListener() {
+        btnTracker_set3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingPage3.this, MainActivity.class));
             }
         });
 
-        btnBig_set1.setOnClickListener(new View.OnClickListener() {
+        btnBig_set3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingPage3.this, big1.class));
             }
         });
 
-        btnReport_set1.setOnClickListener(new View.OnClickListener() {
+        btnReport_set3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingPage3.this, reportMain.class));
             }
         });
 
-        btnSetting_set1.setOnClickListener(new View.OnClickListener() {
+        btnSetting_set3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingPage3.this, SettingPage1.class));
