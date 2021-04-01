@@ -14,41 +14,66 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Calendar;
 
+public class MainActivity extends AppCompatActivity {
+    double Balance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences loginId = getSharedPreferences("loginId",MODE_PRIVATE);
+     //   SharedPreferences Dailyallow = getSharedPreferences("Dailyallow ",MODE_PRIVATE);
         String loginID = loginId.getString("loginId","");
+
         UserDatabase userdatabase = new UserDatabase(this);
 
         ImageView btnTracker = findViewById(R.id.btnTracker);
         ImageView btnBig = findViewById(R.id.btnBig);
         ImageView btnReport = findViewById(R.id.btnReport);
         ImageView btnSettings = findViewById(R.id.btnSettings);
-        ImageView btnAdd = findViewById(R.id.btnAdd);
-        Button button = findViewById(R.id.testBtn);
-        TextView test = findViewById(R.id.test2);
+       // ImageView btnAdd = findViewById(R.id.btnAdd);
+      //  Button button = findViewById(R.id.testBtn);
+//        TextView test = findViewById(R.id.test2);
 
-        int positionId = Integer.parseInt(loginID)-1;
-        Cursor c = userdatabase.viewData();
-        c.moveToPosition(positionId);
+            Cursor Userinf = userdatabase.viewUserData(loginID);
+            Userinf.moveToLast();
+           Balance = Double.parseDouble(Userinf.getString(10));
 
-        double userIncome = c.getDouble(8);
-        double UserSaving = c.getDouble(9);
+
+       // Get date
+        final Calendar ce = Calendar.getInstance();
+        int exyear = ce.get(Calendar.YEAR);
+        int exMonth = ce.get(Calendar.MONTH);
+        int exday = ce.get(Calendar.DAY_OF_MONTH);
+
+        // get the last day of the month
+        int last = ce.getActualMaximum(ce.DAY_OF_MONTH);
+
+
+        double dayRemain = last - exday + 1;
+
+
+        String DailyAllow  = Userinf.getString(11);//Dailyallow.getString("dailyAllowed", Double.toString((Balance / dayRemain)));
+        double userBalance = Userinf.getDouble(10);
+        double userSaving = Userinf.getDouble(9);
 
         Button btnGoTrans = findViewById(R.id.btnToTrans);
 
         TextView balance = findViewById(R.id.mainbalance);
         TextView saving = findViewById(R.id.mainsaving);
-      //  TextView mainDEallow = findViewById(R.id.maindeallow);
+        TextView mainDEallow = findViewById(R.id.maindeallow);
 
-        balance.setText(Double.toString(userIncome));
-        saving.setText(Double.toString(UserSaving));
-
-
+        balance.setText(Double.toString(userBalance));
+        saving.setText(Double.toString(userSaving));
+        mainDEallow.setText(DailyAllow);
+        /*if (DailyAllow==null){
+            mainDEallow.setText(Double.toString((Balance / dayRemain)));
+        }
+        else {
+            mainDEallow.setText(DailyAllow);
+        }
+*/
         btnGoTrans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+     /*   btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, addnew.class));

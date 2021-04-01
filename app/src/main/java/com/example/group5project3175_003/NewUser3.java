@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
+
 public class NewUser3 extends AppCompatActivity {
     UserDatabase userDatabase;
     @Override
@@ -45,6 +47,20 @@ public class NewUser3 extends AppCompatActivity {
                 double sAdIncome = Integer.parseInt(adIncome.getText().toString());
                 double sIncome = sSalary+sAdIncome;
                 double sSaving = Integer.parseInt(saving.getText().toString());
+                double sBalance = sIncome;
+
+
+                final Calendar ce = Calendar.getInstance();
+                int exyear = ce.get(Calendar.YEAR);
+                int exMonth = ce.get(Calendar.MONTH);
+                int exday = ce.get(Calendar.DAY_OF_MONTH);
+                int last = ce.getActualMaximum(ce.DAY_OF_MONTH);
+
+                int dayRemain = last - exday + 1;
+
+                double dailyInitial = sBalance/dayRemain;
+                Toast.makeText(NewUser3.this,"dailyRemain "+dailyInitial,Toast.LENGTH_SHORT).show();
+
 
 
                 isInserted = userDatabase.add(fName,
@@ -55,7 +71,9 @@ public class NewUser3 extends AppCompatActivity {
                         alarm,
                         sacName,
                         sIncome,
-                        sSaving);
+                        sSaving,
+                        sBalance,
+                        dailyInitial);
                     if (isInserted){
                         Toast.makeText(NewUser3.this,"Data added",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(NewUser3.this,CheckAccount.class));

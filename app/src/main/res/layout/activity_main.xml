@@ -8,18 +8,6 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="100dp"
-        android:contentDescription="@string/btnAdd"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSettings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/btnadd" />
-
-    <ImageView
         android:id="@+id/btnTracker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,48 +68,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/btnedit" />
 
-    <TextView
-        android:id="@+id/test2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginLeft="176dp"
-        android:layout_marginTop="216dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginRight="177dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/testBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginLeft="163dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
-        android:layout_marginBottom="64dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/btnBig"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/btnToTrans"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="484dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:text="Go to Trans"
-        app:layout_constraintEnd_toStartOf="@+id/testBtn"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_width="149dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="516dp"
+        android:background="#3949AB"
+        android:text="Tracker"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -129,14 +86,11 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="261dp"
-        android:layout_marginEnd="298dp"
-        android:layout_marginRight="298dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="284dp"
         android:text="@string/mainIncome"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -150,7 +104,7 @@
         android:layout_marginEnd="305dp"
         android:layout_marginRight="305dp"
         android:text="@string/mainSaving"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,15 +112,15 @@
 
     <TextView
         android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="103dp"
+        android:layout_height="91dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="181dp"
         android:layout_marginRight="181dp"
         android:text="@string/mainDailyExAllowed"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -174,43 +128,34 @@
 
     <TextView
         android:id="@+id/mainbalance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
-        android:layout_marginTop="266dp"
-        android:layout_marginEnd="173dp"
-        android:layout_marginRight="173dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="284dp"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textView25"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/mainsaving"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginLeft="134dp"
-        android:layout_marginTop="325dp"
-        android:layout_marginEnd="171dp"
-        android:layout_marginRight="171dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="136dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="348dp"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textView26"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/maindeallow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="373dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginRight="169dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="136dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="440dp"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textView27"
         app:layout_constraintTop_toTopOf="parent" />
 
